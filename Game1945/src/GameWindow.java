@@ -10,8 +10,8 @@ import java.io.File;
 public class GameWindow extends Frame implements MouseListener,MouseMotionListener, KeyListener, Runnable{
 
     BufferedImage background;
-    BufferedImage plane4, plane1, bullet1;
-    int xPlane4, yPlane4, xPlane1, yPlane1, xBullet1, yBullet1;
+    BufferedImage plane4, plane1, bullet1A;
+    int xPlane4, yPlane4, xPlane1, yPlane1, xBullet1A, yBullet1A;
     int direction=0;
 
     public GameWindow()
@@ -36,7 +36,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             background = ImageIO.read(new File("Resouces/Background.png"));
             plane4 = ImageIO.read(new File("Resouces/PLANE4.png"));
             plane1 = ImageIO.read(new File("Resouces/PLANE1.png"));
-            bullet1 = ImageIO.read(new File("Resouces/DAN.png"));
+            bullet1A = ImageIO.read(new File("Resouces/DAN.png"));
 
         }catch (Exception e)
         {
@@ -58,7 +58,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         g.drawLine(0, 0, 100, 100);
         //g.drawImage(plane4, xPlane4, yPlane4, null);
         g.drawImage(plane1, xPlane1, yPlane1, null);
-        g.drawImage(bullet1, xBullet1, yBullet1,  null);
+        g.drawImage(bullet1A, xBullet1A, yBullet1A,  null);
 
     }
 
@@ -114,9 +114,9 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             if (direction==4)
                 xPlane4-=3;
 
-            //di chuyen huong di cua dan Bullet1 theo Plane1
-            if(directionBullet1==0){ //Plane1 dung yen
-                yBullet1 -=3;
+            //di chuyen huong di cua dan Bullet1A theo Plane1
+            if(directionBullet1==0){
+                yBullet1A -=3;
             }
 
             repaint();
@@ -137,14 +137,16 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
     @Override
     public void mouseMoved(MouseEvent e) {
+        //toa do cua Plane so 1 theo tro chuot
         xPlane1 = e.getX();
         yPlane1 = e.getY();
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        xBullet1 = e.getX();
-        yBullet1 = e.getY();
+        //toa do cua dan 1A
+        xBullet1A = e.getX();
+        yBullet1A = e.getY();
     }
 
     @Override
