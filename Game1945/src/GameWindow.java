@@ -7,7 +7,7 @@ import java.io.File;
 /**
  * Created by TrungNT on 2/27/2016.
  */
-public class GameWindow extends Frame implements MouseListener, KeyListener, Runnable{
+public class GameWindow extends Frame implements MouseMotionListener, KeyListener, Runnable{
 
     BufferedImage background;
     BufferedImage plane4, plane1;
@@ -43,7 +43,7 @@ public class GameWindow extends Frame implements MouseListener, KeyListener, Run
         }
 
         this.addKeyListener(this);
-        this.addMouseListener(this);
+        this.addMouseMotionListener(this);
 
         repaint();
 
@@ -122,28 +122,13 @@ public class GameWindow extends Frame implements MouseListener, KeyListener, Run
 
 
     @Override
-    public void mouseClicked(MouseEvent e) {
+    public void mouseDragged(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
         xPlane1 = e.getX();
         yPlane1 = e.getY();
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
     }
 }
