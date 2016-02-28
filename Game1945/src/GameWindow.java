@@ -10,18 +10,23 @@ import java.io.File;
 public class GameWindow extends Frame implements MouseListener,MouseMotionListener, KeyListener, Runnable{
 
     BufferedImage background;
-    BufferedImage plane4, plane1, bullet1A, bullet1B;
-    int xPlane4, yPlane4, xPlane1, yPlane1, xBullet1A, yBullet1A, xBullet1B, yBullet1B;
+    BufferedImage plane4, plane1, bullet1A, bullet1B, bullet4A, bullet4B;
+    int xPlane4, yPlane4, xPlane1, yPlane1, xBullet1A, yBullet1A, xBullet1B, yBullet1B, xBullet4A, yBullet4A, xBullet4B, yBullet4B;
     int direction=0;
     int directionBullet1=5; //Huong di chuyen cua dan Bullet di len tren: x giu nguyen, y giam
 
     public GameWindow()
     {
+        //toa do Plane4 khi khoi tao dau tien
         xPlane4 = 200;
         yPlane4 = 300;
 
+        //toa do Plane1 khi khoi tao dau tien
         xPlane1 = 250;
         yPlane1 = 250;
+
+
+
         this.setTitle("This is Game 1945");
         this.setSize(400,640);
         this.setVisible(true);
@@ -39,6 +44,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             plane1 = ImageIO.read(new File("Resouces/PLANE1.png"));
             bullet1A = ImageIO.read(new File("Resouces/DAN.png"));
             bullet1B = ImageIO.read(new File("Resouces/DAN.png"));
+            bullet4A = ImageIO.read(new File("Resouces/DAN.png"));
 
         }catch (Exception e)
         {
@@ -60,10 +66,11 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     {
         g.drawImage(background, 0, 0, null);
         //g.drawLine(0, 0, 100, 100);
-        //g.drawImage(plane4, xPlane4, yPlane4, null);
+        g.drawImage(plane4, xPlane4, yPlane4, null);
         g.drawImage(plane1, xPlane1, yPlane1, null);
         g.drawImage(bullet1A, xBullet1A, yBullet1A,  null);
         g.drawImage(bullet1B, xBullet1B, yBullet1B, null);
+        g.drawImage(bullet4A, xBullet4A, yBullet4A, null);
 
     }
 
@@ -74,6 +81,8 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
     @Override
     public void keyPressed(KeyEvent e) {
+
+
         if(e.getKeyChar()=='w') //di chuyen len tren
         {
             //yPlane -= 30;
@@ -87,6 +96,13 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             direction = 3;
         if(e.getKeyChar() == 'a') //di chuyen sang trai
             direction = 4;
+
+        if(e.getKeyChar() == 'b')
+        {
+            //khi nhan phim thi xac dinh toa do cua dan Bullet4A khi khoi tao dau tien
+            xBullet4A = 200;
+            yBullet4A = 312;
+        }
     }
 
     @Override
@@ -103,25 +119,28 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             //System.out.println(x++);
             //Huong di cua may bay so 4
             if(direction==0){
+
             }
             else
-            if(direction==1){
+            if(direction==1){ //di chuyen len tren: phim w
                 yPlane4 -=3;
             }
             else
-            if(direction==2)
+            if(direction==2) //di chuyen xuong: phim s
                 yPlane4 +=3;
             else
-            if(direction==3)
+            if(direction==3) //di chuyen sang phai: phim d
                 xPlane4+=3;
             else
-            if (direction==4)
+            if (direction==4) //di chuyen sang trai: phim a
                 xPlane4-=3;
 
             //di chuyen huong di cua dan Bullet1A va Bullet1B theo Plane1
             if(directionBullet1==5){
                 yBullet1A -=3;
                 yBullet1B -=3;
+                //toa do dan 1A
+                yBullet4A -=3;
             }
 
             repaint();
@@ -156,6 +175,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         //toa do cua dan 1B
         xBullet1B = e.getX() + 58;
         yBullet1B = e.getY();
+
     }
 
     @Override
