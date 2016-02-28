@@ -45,6 +45,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             bullet1A = ImageIO.read(new File("Resouces/DAN.png"));
             bullet1B = ImageIO.read(new File("Resouces/DAN.png"));
             bullet4A = ImageIO.read(new File("Resouces/DAN.png"));
+            bullet4B = ImageIO.read(new File("Resouces/DAN.png"));
 
         }catch (Exception e)
         {
@@ -71,7 +72,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         g.drawImage(bullet1A, xBullet1A, yBullet1A,  null);
         g.drawImage(bullet1B, xBullet1B, yBullet1B, null);
         g.drawImage(bullet4A, xBullet4A, yBullet4A, null);
-
+        g.drawImage(bullet4B, xBullet4B, yBullet4B, null);
     }
 
     @Override
@@ -102,6 +103,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             //khi nhan phim thi xac dinh toa do cua dan Bullet4A khi khoi tao dau tien
             xBullet4A = 200;
             yBullet4A = 312;
+
+            //khi nhan phim thi xac dinh toa do cua dan Bullet4B khi khoi tao dau tien
+            xBullet4B = 250;
+            yBullet4B = 312;
         }
     }
 
@@ -139,8 +144,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             if(directionBullet1==5){
                 yBullet1A -=3;
                 yBullet1B -=3;
-                //toa do dan 1A
+                //toa do dan 4A
                 yBullet4A -=3;
+                //toa do dan 4B
+                yBullet4B -=3;
             }
 
             repaint();
