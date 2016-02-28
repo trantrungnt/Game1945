@@ -118,7 +118,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             if (direction==4)
                 xPlane4-=3;
 
-            //di chuyen huong di cua dan Bullet1A theo Plane1
+            //di chuyen huong di cua dan Bullet1A va Bullet1B theo Plane1
             if(directionBullet1==5){
                 yBullet1A -=3;
                 yBullet1B -=3;
