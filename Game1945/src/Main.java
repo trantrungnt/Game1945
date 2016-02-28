@@ -7,9 +7,7 @@ public class Main {
     public static void main(String[] args)
     {
         GameWindow oGameWindow = new GameWindow();
-
         Thread thread = new Thread(oGameWindow);
-
         thread.start();
     }
 }

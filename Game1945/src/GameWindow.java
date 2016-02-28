@@ -7,11 +7,11 @@ import java.io.File;
 /**
  * Created by TrungNT on 2/27/2016.
  */
-public class GameWindow extends Frame implements MouseMotionListener, KeyListener, Runnable{
+public class GameWindow extends Frame implements MouseListener,MouseMotionListener, KeyListener, Runnable{
 
     BufferedImage background;
-    BufferedImage plane4, plane1;
-    int xPlane4, yPlane4, xPlane1, yPlane1;
+    BufferedImage plane4, plane1, bullet1;
+    int xPlane4, yPlane4, xPlane1, yPlane1, xBullet1, yBullet1;
     int direction=0;
 
     public GameWindow()
@@ -36,6 +36,7 @@ public class GameWindow extends Frame implements MouseMotionListener, KeyListene
             background = ImageIO.read(new File("Resouces/Background.png"));
             plane4 = ImageIO.read(new File("Resouces/PLANE4.png"));
             plane1 = ImageIO.read(new File("Resouces/PLANE1.png"));
+            bullet1 = ImageIO.read(new File("Resouces/DAN.png"));
 
         }catch (Exception e)
         {
@@ -44,6 +45,7 @@ public class GameWindow extends Frame implements MouseMotionListener, KeyListene
 
         this.addKeyListener(this);
         this.addMouseMotionListener(this);
+        this.addMouseListener(this);
 
         repaint();
 
@@ -56,6 +58,7 @@ public class GameWindow extends Frame implements MouseMotionListener, KeyListene
         g.drawLine(0, 0, 100, 100);
         //g.drawImage(plane4, xPlane4, yPlane4, null);
         g.drawImage(plane1, xPlane1, yPlane1, null);
+        g.drawImage(bullet1, xBullet1, yBullet1,  null);
 
     }
 
@@ -89,10 +92,12 @@ public class GameWindow extends Frame implements MouseMotionListener, KeyListene
     @Override
     public void run() {
         int x = 0;
+        int directionBullet1=0;
 
         while(true)
         {
             //System.out.println(x++);
+            //Huong di cua may bay so 4
             if(direction==0){
             }
             else
@@ -109,6 +114,10 @@ public class GameWindow extends Frame implements MouseMotionListener, KeyListene
             if (direction==4)
                 xPlane4-=3;
 
+            //di chuyen huong di cua dan Bullet1 theo Plane1
+            if(directionBullet1==0){ //Plane1 dung yen
+                yBullet1 -=3;
+            }
 
             repaint();
 
@@ -130,5 +139,31 @@ public class GameWindow extends Frame implements MouseMotionListener, KeyListene
     public void mouseMoved(MouseEvent e) {
         xPlane1 = e.getX();
         yPlane1 = e.getY();
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        xBullet1 = e.getX();
+        yBullet1 = e.getY();
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
     }
 }
