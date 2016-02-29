@@ -10,9 +10,10 @@ public class Plane {
     private int speed;
     private int heath;
     private int damage; //do sat thuong
-    //private int planeType;
+    private int planeType;
     public BufferedImage sprite; //hinh anh cua game2D
     public int direction;
+    public int control;
 
     //toa do x
     public void setPostionX(int x)

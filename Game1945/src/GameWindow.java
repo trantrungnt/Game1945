@@ -186,7 +186,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         }
     }
 
-    
+
     //Phuong thuc xu ly chong man hinh bi giat
     @Override
     public void update(Graphics g)
