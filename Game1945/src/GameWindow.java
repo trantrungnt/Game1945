@@ -17,7 +17,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     int directionBullet; //Huong di chuyen cua dan Bullet di len tren: x giu nguyen, y giam
 
     Plane plane4, plane1;  //tham chieu
-    Bullet bullet1A, bullet1B;
+    Bullet bullet1A, bullet1B, bullet4A, bullet4B;
     Image image;
     Graphics seconds;
 
@@ -46,6 +46,12 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         //khoi tao doi tuong bullet1B
         bullet1B = new Bullet();
 
+        //khoi tao doi tuong bullet4A
+        bullet4A = new Bullet();
+
+        //khoi tao doi tuong bullet4B
+        bullet4B = new Bullet();
+
         this.setTitle("This is Game 1945");
         this.setSize(400,640);
         this.setVisible(true);
@@ -63,6 +69,9 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             plane1.sprite = ImageIO.read(new File("Resouces/PLANE1.png"));
             bullet1A.sprite = ImageIO.read(new File("Resouces/DAN.png"));
             bullet1B.sprite = ImageIO.read(new File("Resouces/DAN.png"));
+            bullet4A.sprite = ImageIO.read(new File("Resouces/DAN.png"));
+            bullet4B.sprite = ImageIO.read(new File("Resouces/DAN.png"));
+
 
         }catch (Exception e)
         {
@@ -103,6 +112,12 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
         //ve dan bullet1B
         bullet1B.draw(g);
+
+        //ve dan bullet4A
+        bullet4A.draw(g);
+
+        //ve dan bullet4B
+        bullet4B.draw(g);
     }
 
     @Override
@@ -125,18 +140,19 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
                 plane4.direction = 4;
 
 
-        /*if(e.getKeyChar() == 'b')
+        if(e.getKeyChar() == 'b')
         {
             directionBullet = 6;
             //khi nhan phim thi xac dinh toa do cua dan Bullet4A khi khoi tao dau tien
-            xBullet4A = 200;
-            yBullet4A = 312;
+            bullet4A.setPostionX(200);
+            bullet4A.setPostionY(312);
 
             //khi nhan phim thi xac dinh toa do cua dan Bullet4B khi khoi tao dau tien
-            xBullet4B = 255;
-            yBullet4B = 312;
+            bullet4B.setPostionX(255);
+            bullet4B.setPostionY(312);
 
-        }*/
+
+        }
     }
 
     @Override
@@ -153,13 +169,13 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             //cap nhat lai trang thai cua may bay so 4
             plane4.update();
 
-            if (bullet1A.direction==5)
-            {
+            if (bullet1A.direction==5 && bullet1B.direction==5) {
                 //toa dan 1A
                 bullet1A.move();
                 //toa do dan 1B
                 bullet1B.move();
             }
+
 
             repaint();
 
@@ -170,6 +186,8 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             }
         }
     }
+
+
 
     //Phuong thuc xu ly chong man hinh bi giat
     @Override
@@ -204,6 +222,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     @Override
     public void mouseClicked(MouseEvent e) {
         bullet1A.direction = 5;
+        bullet1B.direction = 5;
         //toa do cua dan 1A
         bullet1A.setPostionX(e.getX());
         bullet1A.setPostionY(e.getY());
