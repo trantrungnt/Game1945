@@ -24,24 +24,26 @@ public class Plane {
                 this.postionY -= this.speed;
             }
                 else
-                if(this.direction==2) //di chuyen xuong: phim s
-                    this.postionY+=this.speed;
-                else
-                if(direction==3) //di chuyen sang phai: phim d
-                    this.postionX+=this.speed;
-                else
-                if (direction==4) //di chuyen sang trai: phim a
-                {
-                    this.postionX-=this.speed;
-                }
+                    if(this.direction==2) //di chuyen xuong: phim s
+                        this.postionY+=this.speed;
+                    else
+                        if(direction==3) //di chuyen sang phai: phim d
+                            this.postionX+=this.speed;
+                        else
+                            if (direction==4) //di chuyen sang trai: phim a
+                            {
+                                this.postionX-=this.speed;
+                            }
 
     }
 
+    //cap nhat lai trang thai di chuyen cua may bay
     public void update()
     {
         move();
     }
 
+    //ve may bay
     public void draw(Graphics g)
     {
         g.drawImage(this.sprite, this.postionX, this.postionY, null);

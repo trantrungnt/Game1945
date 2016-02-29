@@ -51,13 +51,14 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
         try {
             background = ImageIO.read(new File("Resouces/Background.png"));
+            plane.sprite = ImageIO.read(new File("Resouces/PLANE4.png"));
             /*plane4 = ImageIO.read(new File("Resouces/PLANE4.png"));
             plane1 = ImageIO.read(new File("Resouces/PLANE1.png"));
             bullet1A = ImageIO.read(new File("Resouces/DAN.png"));
             bullet1B = ImageIO.read(new File("Resouces/DAN.png"));
             bullet4A = ImageIO.read(new File("Resouces/DAN.png"));
             bullet4B = ImageIO.read(new File("Resouces/DAN.png"));*/
-            plane.sprite = ImageIO.read(new File("Resouces/PLANE4.png"));
+
 
 
 
@@ -89,6 +90,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     public void paint(Graphics g)
     {
         g.drawImage(background, 0, 0, null);
+        g.drawImage(plane.sprite, plane.postionX, plane.postionY, null);
         //g.drawLine(0, 0, 100, 100);
         /*g.drawImage(plane4, xPlane4, yPlane4, null);
         g.drawImage(plane1, xPlane1, yPlane1, null);
@@ -96,7 +98,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         g.drawImage(bullet1B, xBullet1B, yBullet1B, null);
         g.drawImage(bullet4A, xBullet4A, yBullet4A, null);
         g.drawImage(bullet4B, xBullet4B, yBullet4B, null);*/
-        g.drawImage(plane.sprite, plane.postionX, plane.postionY, null);
+
     }
 
     @Override
@@ -107,20 +109,17 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     @Override
     public void keyPressed(KeyEvent e) {
         if(e.getKeyChar()=='w') //di chuyen len tren
-        {
-            //yPlane -= 30;
-            //repaint();
-            plane.direction = 1;
-        }
+                plane.direction = 1;
 
         if(e.getKeyChar() == 's') //di chuyen xuong duoi
-            plane.direction = 2;
+                plane.direction = 2;
+
         if(e.getKeyChar() == 'd') //di chuyen sang phai
-            plane.direction = 3;
+                plane.direction = 3;
+
         if(e.getKeyChar() == 'a') //di chuyen sang trai
-        {
-            plane.direction = 4;
-        }
+                plane.direction = 4;
+
 
         /*if(e.getKeyChar() == 'b')
         {
