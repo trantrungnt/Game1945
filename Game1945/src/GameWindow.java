@@ -92,25 +92,23 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
     @Override
     public void keyPressed(KeyEvent e) {
-
-
         if(e.getKeyChar()=='w') //di chuyen len tren
         {
             //yPlane -= 30;
             //repaint();
-            direction = 1;
+            plane.direction = 1;
         }
 
         if(e.getKeyChar() == 's') //di chuyen xuong duoi
-            direction = 2;
+            plane.direction = 2;
         if(e.getKeyChar() == 'd') //di chuyen sang phai
-            direction = 3;
+            plane.direction = 3;
         if(e.getKeyChar() == 'a') //di chuyen sang trai
         {
-            direction = 4;
+            plane.direction = 4;
         }
 
-        if(e.getKeyChar() == 'b')
+        /*if(e.getKeyChar() == 'b')
         {
             directionBullet = 6;
             //khi nhan phim thi xac dinh toa do cua dan Bullet4A khi khoi tao dau tien
@@ -121,12 +119,12 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             xBullet4B = 255;
             yBullet4B = 312;
 
-        }
+        }*/
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
-
+    public void keyReleased(KeyEvent e) { //khi tha phim ra thi may bay plane dung yen
+        plane.direction = 0;
     }
 
     @Override
@@ -137,25 +135,8 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         {
             //System.out.println(x++);
             //Huong di cua may bay so 4
-            if(direction==0){
+            plane.update();
 
-            }
-            else
-            if(direction==1){ //di chuyen len tren: phim w
-                plane.postionY-=3;
-
-            }
-            else
-            if(direction==2) //di chuyen xuong: phim s
-                plane.postionY+=3;
-            else
-            if(direction==3) //di chuyen sang phai: phim d
-                plane.postionX+=3;
-            else
-            if (direction==4) //di chuyen sang trai: phim a
-            {
-                plane.postionX-=3;
-            }
             //di chuyen huong di cua dan Bullet1A va Bullet1B theo Plane1
             if(directionBullet==5){ //gia tri 5 cho trang thai dan cua Plane1
                 //toa dan 1A
