@@ -15,6 +15,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     int direction=0;
     int directionBullet; //Huong di chuyen cua dan Bullet di len tren: x giu nguyen, y giam
 
+    Plane plane;  //tham chieu
+    Image image;
+    Graphics seconds;
+
     public GameWindow()
     {
         //toa do Plane4 khi khoi tao dau tien
@@ -24,8 +28,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         //toa do Plane1 khi khoi tao dau tien
         xPlane1 = 250;
         yPlane1 = 250;
-
-
+        plane = new Plane();
+        plane.postionX = 150;
+        plane.postionY = 300;
+        plane.speed =3;
 
         this.setTitle("This is Game 1945");
         this.setSize(400,640);
@@ -40,12 +46,15 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
         try {
             background = ImageIO.read(new File("Resouces/Background.png"));
-            plane4 = ImageIO.read(new File("Resouces/PLANE4.png"));
+            /*plane4 = ImageIO.read(new File("Resouces/PLANE4.png"));
             plane1 = ImageIO.read(new File("Resouces/PLANE1.png"));
             bullet1A = ImageIO.read(new File("Resouces/DAN.png"));
             bullet1B = ImageIO.read(new File("Resouces/DAN.png"));
             bullet4A = ImageIO.read(new File("Resouces/DAN.png"));
-            bullet4B = ImageIO.read(new File("Resouces/DAN.png"));
+            bullet4B = ImageIO.read(new File("Resouces/DAN.png"));*/
+            plane.sprite = ImageIO.read(new File("Resouces/PLANE4.png"));
+
+
 
         }catch (Exception e)
         {
@@ -67,12 +76,13 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     {
         g.drawImage(background, 0, 0, null);
         //g.drawLine(0, 0, 100, 100);
-        g.drawImage(plane4, xPlane4, yPlane4, null);
+        /*g.drawImage(plane4, xPlane4, yPlane4, null);
         g.drawImage(plane1, xPlane1, yPlane1, null);
         g.drawImage(bullet1A, xBullet1A, yBullet1A,  null);
         g.drawImage(bullet1B, xBullet1B, yBullet1B, null);
         g.drawImage(bullet4A, xBullet4A, yBullet4A, null);
-        g.drawImage(bullet4B, xBullet4B, yBullet4B, null);
+        g.drawImage(bullet4B, xBullet4B, yBullet4B, null);*/
+        g.drawImage(plane.sprite, plane.postionX, plane.postionY, null);
     }
 
     @Override
@@ -132,18 +142,19 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             }
             else
             if(direction==1){ //di chuyen len tren: phim w
-                yPlane4-=3;
+                plane.postionY-=3;
+
             }
             else
             if(direction==2) //di chuyen xuong: phim s
-                yPlane4+=3;
+                plane.postionY+=3;
             else
             if(direction==3) //di chuyen sang phai: phim d
-                xPlane4+=3;
+                plane.postionX+=3;
             else
             if (direction==4) //di chuyen sang trai: phim a
             {
-                xPlane4-=3;
+                plane.postionX-=3;
             }
             //di chuyen huong di cua dan Bullet1A va Bullet1B theo Plane1
             if(directionBullet==5){ //gia tri 5 cho trang thai dan cua Plane1
@@ -171,6 +182,22 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void update(Graphics g)
+    {
+        if(image ==null)
+        {
+            image = createImage(this.getWidth(), this.getHeight());
+            seconds = image.getGraphics();
+        }
+
+        seconds.setColor(getBackground());
+        seconds.fillRect(0, 0, getWidth(), getHeight());
+        seconds.setColor(getForeground());
+        paint(seconds);
+        g.drawImage(image, 0, 0, null);
     }
 
 
