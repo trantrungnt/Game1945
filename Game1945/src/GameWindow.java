@@ -1,3 +1,5 @@
+import javafx.stage.Screen;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.*;
@@ -21,6 +23,9 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
     public GameWindow()
     {
+        //an con tro hien tai
+        this.setCursor();
+
         //toa do Plane4 khi khoi tao dau tien
         xPlane4 = 200;
         yPlane4 = 300;
@@ -69,6 +74,15 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         //ve lai
         repaint();
 
+    }
+
+    //dinh nghia phuong thuc an con tro chuot hien tai
+    private void setCursor() {
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Point hotSpot = new Point(0,0);
+        BufferedImage cursorImage = new BufferedImage(1, 1, BufferedImage.TRANSLUCENT);
+        Cursor invisibleCursor = toolkit.createCustomCursor(cursorImage, hotSpot, "InvisibleCursor");
+        setCursor(invisibleCursor);
     }
 
     @Override
