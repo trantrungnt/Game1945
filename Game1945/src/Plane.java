@@ -13,8 +13,8 @@ public class Plane {
     public int planeType;
     public BufferedImage sprite; //hinh anh cua game2D
     public int direction;
-
-    public void move()
+    //an tro chuot, sua class Plane sao cho thoa man 2 dieu kien: 1 con chay chuot, 1 con chay phim: them bien kieu dieu khien, ra soat thuoc tinh xem: de access lai quyen truy cap cho no: private + public cho phu hop (get, set cho private)
+    private void move()
     {
         if(this.direction ==0)
         {}
