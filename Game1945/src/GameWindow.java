@@ -17,6 +17,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     int directionBullet; //Huong di chuyen cua dan Bullet di len tren: x giu nguyen, y giam
 
     Plane plane4, plane1;  //tham chieu
+    Bullet bullet1A, bullet1B;
     Image image;
     Graphics seconds;
 
@@ -39,6 +40,12 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         plane1.setPostionX(250);
         plane1.setPostionY(250);
 
+        //khoi tao doi tuong bullet1A
+        bullet1A = new Bullet();
+
+        //khoi tao doi tuong bullet1B
+        bullet1B = new Bullet();
+
         this.setTitle("This is Game 1945");
         this.setSize(400,640);
         this.setVisible(true);
@@ -54,6 +61,8 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             background = ImageIO.read(new File("Resouces/Background.png"));
             plane4.sprite = ImageIO.read(new File("Resouces/PLANE4.png"));
             plane1.sprite = ImageIO.read(new File("Resouces/PLANE1.png"));
+            bullet1A.sprite = ImageIO.read(new File("Resouces/DAN.png"));
+            bullet1B.sprite = ImageIO.read(new File("Resouces/DAN.png"));
 
         }catch (Exception e)
         {
@@ -88,6 +97,12 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
         //ve may bay plane1
         plane1.draw(g);
+
+        //ve dan bullet1A
+        bullet1A.draw(g);
+
+        //ve dan bullet1B
+        bullet1B.draw(g);
     }
 
     @Override
@@ -133,24 +148,17 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     public void run() {
         while(true)
         {
+            //bullet1A = new Bullet();
             //System.out.println(x++);
             //cap nhat lai trang thai cua may bay so 4
             plane4.update();
 
-            //di chuyen huong di cua dan Bullet1A va Bullet1B theo Plane1
-            if(directionBullet==5){ //gia tri 5 cho trang thai dan cua Plane1
-                //toa dan 1A
-                yBullet1A -=3;
-                //toa do dan 1B
-                yBullet1B -=3;
-            }
-            //di chuyen huong di cua dan Bullet4A va bullet4B theo Plane4
-            if(directionBullet==6)
+            if (bullet1A.direction==5)
             {
-                //toa do dan 4A
-                yBullet4A -=3;
-                //toa do dan 4B
-                yBullet4B -=3;
+                //toa dan 1A
+                bullet1A.move();
+                //toa do dan 1B
+                bullet1B.move();
             }
 
             repaint();
@@ -195,15 +203,14 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        directionBullet = 5;
+        bullet1A.direction = 5;
         //toa do cua dan 1A
-        xBullet1A = e.getX();
-        yBullet1A = e.getY();
+        bullet1A.setPostionX(e.getX());
+        bullet1A.setPostionY(e.getY());
 
         //toa do cua dan 1B
-        xBullet1B = e.getX() + 58;
-        yBullet1B = e.getY();
-
+        bullet1B.setPostionX(e.getX() + 58);
+        bullet1B.setPostionY(e.getY());
     }
 
     @Override
