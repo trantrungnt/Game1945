@@ -12,10 +12,6 @@ import java.io.File;
 public class GameWindow extends Frame implements MouseListener,MouseMotionListener, KeyListener, Runnable{
 
     BufferedImage background;
-    //BufferedImage plane4, plane1, bullet1A, bullet1B, bullet4A, bullet4B;
-    int xPlane1, yPlane1, xBullet1A, yBullet1A, xBullet1B, yBullet1B, yBullet4A, xBullet4B, yBullet4B;
-    int directionBullet; //Huong di chuyen cua dan Bullet di len tren: x giu nguyen, y giam
-
     Plane plane4, plane1;  //tham chieu
     Bullet bullet1A, bullet1B, bullet4A, bullet4B;
     Image image;
@@ -27,13 +23,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         this.setCursor();
 
         plane4 = new Plane();
-        plane4.setPostionX(150);
-        plane4.setPostionY(300);
-        plane4.setSpeed(3);
-
         //toa do Plane4 khi khoi tao dau tien
         plane4.setPostionX(200);
         plane4.setPostionY(300);
+        plane4.setSpeed(3);
 
         plane1 = new Plane();
         //toa do Plane1 khi khoi tao dau tien
@@ -137,19 +130,20 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
                 plane4.direction = 3;
 
         if(e.getKeyChar() == 'a') //di chuyen sang trai
-                plane4.direction = 4;
+        {
+            plane4.direction = 4;
 
+        }
 
         if(e.getKeyChar() == 'b')
         {
-            directionBullet = 6;
             //khi nhan phim thi xac dinh toa do cua dan Bullet4A khi khoi tao dau tien
-            bullet4A.setPostionX(200);
-            bullet4A.setPostionY(312);
+            bullet4A.setPostionX(plane4.getPostionX());
+            bullet4A.setPostionY(plane4.getPostionY());
 
             //khi nhan phim thi xac dinh toa do cua dan Bullet4B khi khoi tao dau tien
-            bullet4B.setPostionX(255);
-            bullet4B.setPostionY(312);
+            bullet4B.setPostionX(plane4.getPostionX() + 55);
+            bullet4B.setPostionY(plane4.getPostionY());
 
             bullet4A.direction = 5;
             bullet4B.direction = 5;
@@ -192,8 +186,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         }
     }
 
-
-
+    
     //Phuong thuc xu ly chong man hinh bi giat
     @Override
     public void update(Graphics g)
