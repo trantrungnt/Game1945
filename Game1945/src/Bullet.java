@@ -9,6 +9,7 @@ public class Bullet {
     private int postionY;
     public int direction;
     public BufferedImage sprite;
+    public boolean hidden;
 
     public void setPostionX(int x)
     {

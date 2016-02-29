@@ -45,6 +45,18 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         //khoi tao doi tuong bullet4B
         bullet4B = new Bullet();
 
+        //Trang thai an hien luc khoi tao dau tien cua may bay Plane1 va Plane4
+        plane4.hidden = false; //hien thi may bay Plane4 (may bay nay dieu khien bang ban phim)
+        //hien thi dan bullet cua may bay Plane4
+        bullet4A.hidden = false;
+        bullet4B.hidden = false;
+        plane1.hidden = true; //an may bay Plane1 (may bay nay dieu khien bang chuot)
+        //an dan bullet cua may bay Plane1
+        bullet1A.hidden = true;
+        bullet1B.hidden = true;
+
+        ///////////////////////////////////////////////////////////////////////////////////
+
         this.setTitle("This is Game 1945");
         this.setSize(400,640);
         this.setVisible(true);
@@ -94,23 +106,33 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     public void paint(Graphics g)
     {
         g.drawImage(background, 0, 0, null);
-        //g.drawImage(plane4.sprite, plane4.getPostionX(), plane4.getPostionY(), null);
-        plane4.draw(g); //ve may bay plane4
 
-        //ve may bay plane1
-        plane1.draw(g);
+        if (plane4.hidden == false) {
+            //g.drawImage(plane4.sprite, plane4.getPostionX(), plane4.getPostionY(), null);
+            plane4.draw(g); //ve may bay plane4
 
-        //ve dan bullet1A
-        bullet1A.draw(g);
+        if(bullet4A.hidden == false)
+            //ve dan bullet4A
+            bullet4A.draw(g);
 
-        //ve dan bullet1B
-        bullet1B.draw(g);
+        if (bullet4B.hidden ==false)
+            //ve dan bullet4B
+            bullet4B.draw(g);
+        }
 
-        //ve dan bullet4A
-        bullet4A.draw(g);
+        if (plane1.hidden == false) {
+            //ve may bay plane1
+            plane1.draw(g);
 
-        //ve dan bullet4B
-        bullet4B.draw(g);
+        if (bullet1A.hidden == false)
+            //ve dan bullet1A
+            bullet1A.draw(g);
+
+        if (bullet1B.hidden == false)
+            //ve dan bullet1B
+            bullet1B.draw(g);
+        }
+
     }
 
     @Override
@@ -146,6 +168,27 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
             bullet4A.direction = 5;
             bullet4B.direction = 5;
+        }
+
+        if(e.getKeyChar()=='p') {
+            //an may bay dieu khien bang chuot Mouse
+            plane1.hidden = true;
+            bullet1A.hidden = true;
+            bullet1B.hidden = true;
+
+            plane4.hidden = false;
+            bullet4A.hidden = false;
+            bullet4B.hidden = false;
+        }
+
+        if(e.getKeyChar()=='c') {
+            plane4.hidden = true;
+            bullet4A.hidden = true;
+            bullet4B.hidden = true;
+
+            plane1.hidden = false;
+            bullet1A.hidden = false;
+            bullet1B.hidden = false;
         }
     }
 

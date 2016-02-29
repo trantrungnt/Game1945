@@ -13,7 +13,7 @@ public class Plane {
     private int planeType;
     public BufferedImage sprite; //hinh anh cua game2D
     public int direction;
-    public int control;
+    public boolean hidden;
 
     //toa do x
     public void setPostionX(int x)
