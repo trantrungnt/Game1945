@@ -51,8 +51,8 @@
       <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52208835">
-              <caret line="86" column="5" selection-start-line="80" selection-start-column="29" selection-end-line="86" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.57228917">
+              <caret line="27" column="0" selection-start-line="25" selection-start-column="8" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4327#4328#0" expanded="true" />
@@ -656,8 +656,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52208835">
-          <caret line="86" column="5" selection-start-line="80" selection-start-column="29" selection-end-line="86" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.57228917">
+          <caret line="27" column="0" selection-start-line="25" selection-start-column="8" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4327#4328#0" expanded="true" />
