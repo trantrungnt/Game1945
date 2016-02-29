@@ -16,7 +16,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     int xPlane1, yPlane1, xBullet1A, yBullet1A, xBullet1B, yBullet1B, yBullet4A, xBullet4B, yBullet4B;
     int directionBullet; //Huong di chuyen cua dan Bullet di len tren: x giu nguyen, y giam
 
-    Plane plane4;  //tham chieu
+    Plane plane4, plane1;  //tham chieu
     Image image;
     Graphics seconds;
 
@@ -34,9 +34,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         plane4.setPostionX(200);
         plane4.setPostionY(300);
 
+        plane1 = new Plane();
         //toa do Plane1 khi khoi tao dau tien
-        xPlane1 = 250;
-        yPlane1 = 250;
+        plane1.setPostionX(250);
+        plane1.setPostionY(250);
 
         this.setTitle("This is Game 1945");
         this.setSize(400,640);
@@ -52,7 +53,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         try {
             background = ImageIO.read(new File("Resouces/Background.png"));
             plane4.sprite = ImageIO.read(new File("Resouces/PLANE4.png"));
-
+            plane1.sprite = ImageIO.read(new File("Resouces/PLANE1.png"));
 
         }catch (Exception e)
         {
@@ -84,6 +85,9 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         g.drawImage(background, 0, 0, null);
         //g.drawImage(plane4.sprite, plane4.getPostionX(), plane4.getPostionY(), null);
         plane4.draw(g); //ve may bay plane4
+
+        //ve may bay plane1
+        plane1.draw(g);
     }
 
     @Override
@@ -185,8 +189,8 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     @Override
     public void mouseMoved(MouseEvent e) {
         //toa do cua Plane so 1 theo tro chuot
-        xPlane1 = e.getX();
-        yPlane1 = e.getY();
+        plane1.setPostionX(e.getX());
+        plane1.setPostionY(e.getY());
     }
 
     @Override

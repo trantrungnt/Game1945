@@ -71,12 +71,12 @@
       <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.6606426">
-              <caret line="85" column="43" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="43" />
+            <state vertical-scroll-proportion="-2.2269077">
+              <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3651#3652#0" expanded="true" />
-                <element signature="e#3732#3733#0" expanded="true" />
+                <element signature="e#3836#3837#0" expanded="true" />
+                <element signature="e#3917#3918#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -555,8 +555,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3651#3652#0" expanded="true" />
-            <element signature="e#3732#3733#0" expanded="true" />
+            <element signature="e#3836#3837#0" expanded="true" />
+            <element signature="e#3917#3918#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -575,8 +575,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3651#3652#0" expanded="true" />
-            <element signature="e#3732#3733#0" expanded="true" />
+            <element signature="e#3836#3837#0" expanded="true" />
+            <element signature="e#3917#3918#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -595,8 +595,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3651#3652#0" expanded="true" />
-            <element signature="e#3732#3733#0" expanded="true" />
+            <element signature="e#3836#3837#0" expanded="true" />
+            <element signature="e#3917#3918#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -615,8 +615,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3651#3652#0" expanded="true" />
-            <element signature="e#3732#3733#0" expanded="true" />
+            <element signature="e#3836#3837#0" expanded="true" />
+            <element signature="e#3917#3918#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -635,8 +635,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3651#3652#0" expanded="true" />
-            <element signature="e#3732#3733#0" expanded="true" />
+            <element signature="e#3836#3837#0" expanded="true" />
+            <element signature="e#3917#3918#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -696,12 +696,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.6606426">
-          <caret line="85" column="43" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="43" />
+        <state vertical-scroll-proportion="-2.2269077">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3651#3652#0" expanded="true" />
-            <element signature="e#3732#3733#0" expanded="true" />
+            <element signature="e#3836#3837#0" expanded="true" />
+            <element signature="e#3917#3918#0" expanded="true" />
           </folding>
         </state>
       </provider>
