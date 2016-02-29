@@ -13,7 +13,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     BufferedImage plane4, plane1, bullet1A, bullet1B, bullet4A, bullet4B;
     int xPlane4, yPlane4, xPlane1, yPlane1, xBullet1A, yBullet1A, xBullet1B, yBullet1B, xBullet4A, yBullet4A, xBullet4B, yBullet4B;
     int direction=0;
-    int directionBullet1=5; //Huong di chuyen cua dan Bullet di len tren: x giu nguyen, y giam
+    int directionBullet; //Huong di chuyen cua dan Bullet di len tren: x giu nguyen, y giam
 
     public GameWindow()
     {
@@ -96,17 +96,21 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         if(e.getKeyChar() == 'd') //di chuyen sang phai
             direction = 3;
         if(e.getKeyChar() == 'a') //di chuyen sang trai
+        {
             direction = 4;
+        }
 
         if(e.getKeyChar() == 'b')
         {
+            directionBullet = 6;
             //khi nhan phim thi xac dinh toa do cua dan Bullet4A khi khoi tao dau tien
             xBullet4A = 200;
             yBullet4A = 312;
 
             //khi nhan phim thi xac dinh toa do cua dan Bullet4B khi khoi tao dau tien
-            xBullet4B = 250;
+            xBullet4B = 255;
             yBullet4B = 312;
+
         }
     }
 
@@ -128,27 +132,36 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             }
             else
             if(direction==1){ //di chuyen len tren: phim w
-                yPlane4 -=3;
+                yPlane4-=3;
             }
             else
             if(direction==2) //di chuyen xuong: phim s
-                yPlane4 +=3;
+                yPlane4+=3;
             else
             if(direction==3) //di chuyen sang phai: phim d
                 xPlane4+=3;
             else
             if (direction==4) //di chuyen sang trai: phim a
+            {
                 xPlane4-=3;
-
+            }
             //di chuyen huong di cua dan Bullet1A va Bullet1B theo Plane1
-            if(directionBullet1==5){
+            if(directionBullet==5){ //gia tri 5 cho trang thai dan cua Plane1
+                //toa dan 1A
                 yBullet1A -=3;
+                //toa do dan 1B
                 yBullet1B -=3;
+            }
+            //di chuyen huong di cua dan Bullet4A va bullet4B theo Plane4
+            if(directionBullet==6)
+            {
                 //toa do dan 4A
                 yBullet4A -=3;
                 //toa do dan 4B
                 yBullet4B -=3;
             }
+
+
 
             repaint();
 
@@ -175,6 +188,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        directionBullet = 5;
         //toa do cua dan 1A
         xBullet1A = e.getX();
         yBullet1A = e.getY();
