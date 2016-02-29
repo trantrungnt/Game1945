@@ -132,7 +132,6 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         if(e.getKeyChar() == 'a') //di chuyen sang trai
         {
             plane4.direction = 4;
-
         }
 
         if(e.getKeyChar() == 'b')
