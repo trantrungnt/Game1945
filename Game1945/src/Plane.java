@@ -5,14 +5,70 @@ import java.awt.image.BufferedImage;
  * Created by TrungNT on 2/28/2016.
  */
 public class Plane {
-    public int postionX;
-    public int postionY;
-    public int speed;
-    public int heath;
-    public int damage; //do sat thuong
-    public int planeType;
+    private int postionX;
+    private int postionY;
+    private int speed;
+    private int heath;
+    private int damage; //do sat thuong
+    private int planeType;
     public BufferedImage sprite; //hinh anh cua game2D
     public int direction;
+
+    //toa do x
+    public void setPostionX(int x)
+    {
+        this.postionX = x;
+    }
+
+    public int getPostionX()
+    {
+        return postionX;
+    }
+
+    //toa do y
+    public void setPostionY(int y)
+    {
+        this.postionY = y;
+    }
+
+    public int getPostionY()
+    {
+        return postionY;
+    }
+
+    //toc do speed
+    public void setSpeed(int td)
+    {
+        this.speed = td;
+    }
+
+    public int getSpeed()
+    {
+        return speed;
+    }
+
+    //suc manh
+    public void setHeath(int healthy)
+    {
+        this.heath = healthy;
+    }
+
+    public int getHeath()
+    {
+        return heath;
+    }
+
+    //do sat thuong
+    public void setDamage(int st)
+    {
+        this.damage = st;
+    }
+
+    public int getDamage()
+    {
+        return damage;
+    }
+
     //an tro chuot, sua class Plane sao cho thoa man 2 dieu kien: 1 con chay chuot, 1 con chay phim: them bien kieu dieu khien, ra soat thuoc tinh xem: de access lai quyen truy cap cho no: private + public cho phu hop (get, set cho private)
     private void move()
     {
