@@ -151,7 +151,8 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             bullet4B.setPostionX(255);
             bullet4B.setPostionY(312);
 
-
+            bullet4A.direction = 5;
+            bullet4B.direction = 5;
         }
     }
 
@@ -176,6 +177,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
                 bullet1B.move();
             }
 
+            if (bullet4A.direction ==5 && bullet4B.direction==5){
+                bullet4A.move();
+                bullet4B.move();
+            }
 
             repaint();
 
