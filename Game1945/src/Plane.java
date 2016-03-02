@@ -1,10 +1,13 @@
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 /**
  * Created by TrungNT on 2/28/2016.
  */
 public class Plane {
+    //viet class Plane Abstract, tao 2 loai Enemy co cach ban: 1 loai di vong tron  (viet phuong trinh bau duc (ban 2 vien 1 lan)), 1 con di chuyen binh thuong: ban dan toe 3 huong, doi Dan, cho hinh may bay dich nho lai: dealine: toi thu 6
     private int postionX;
     private int postionY;
     private int speed;
@@ -14,6 +17,20 @@ public class Plane {
     public BufferedImage sprite; //hinh anh cua game2D
     public int direction;
     public boolean hidden;
+
+    public Plane()
+    {
+        this.postionX = 300;
+        this.postionY =300;
+        this.speed = 4;
+
+        try{
+            this.sprite = ImageIO.read("Resources/PLANE1.png");
+        }catch (IOException e){
+
+        }
+    }
+
 
     //toa do x
     public void setPostionX(int x)
