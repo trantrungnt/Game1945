@@ -176,16 +176,19 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             bullet1A.hidden = true;
             bullet1B.hidden = true;
 
+            //hien thi may bay chay bang ban phim
             plane4.hidden = false;
             bullet4A.hidden = false;
             bullet4B.hidden = false;
         }
 
         if(e.getKeyChar()=='c') {
+            //an may bay dieu khien bang ban phim
             plane4.hidden = true;
             bullet4A.hidden = true;
             bullet4B.hidden = true;
 
+            //hien thi may bay chay bang chuot Mouse
             plane1.hidden = false;
             bullet1A.hidden = false;
             bullet1B.hidden = false;
