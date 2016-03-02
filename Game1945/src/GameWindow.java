@@ -19,44 +19,6 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
     public GameWindow()
     {
-        //an con tro hien tai
-        this.setCursor();
-
-        plane4 = new Plane();
-        //toa do Plane4 khi khoi tao dau tien
-        plane4.setPostionX(200);
-        plane4.setPostionY(300);
-        plane4.setSpeed(3);
-
-        plane1 = new Plane();
-        //toa do Plane1 khi khoi tao dau tien
-        plane1.setPostionX(250);
-        plane1.setPostionY(250);
-
-        //khoi tao doi tuong bullet1A
-        bullet1A = new Bullet();
-
-        //khoi tao doi tuong bullet1B
-        bullet1B = new Bullet();
-
-        //khoi tao doi tuong bullet4A
-        bullet4A = new Bullet();
-
-        //khoi tao doi tuong bullet4B
-        bullet4B = new Bullet();
-
-        //Trang thai an hien luc khoi tao dau tien cua may bay Plane1 va Plane4
-        plane4.hidden = false; //hien thi may bay Plane4 (may bay nay dieu khien bang ban phim)
-        //hien thi dan bullet cua may bay Plane4
-        bullet4A.hidden = false;
-        bullet4B.hidden = false;
-        plane1.hidden = true; //an may bay Plane1 (may bay nay dieu khien bang chuot)
-        //an dan bullet cua may bay Plane1
-        bullet1A.hidden = true;
-        bullet1B.hidden = true;
-
-        ///////////////////////////////////////////////////////////////////////////////////
-
         this.setTitle("This is Game 1945");
         this.setSize(400,640);
         this.setVisible(true);
@@ -68,20 +30,18 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             }
         });
 
-        try {
+        //an con tro hien tai
+        this.setCursor();
+
+        //load anh tu thu muc Resources
+        try{
             background = ImageIO.read(new File("Resouces/Background.png"));
-            plane4.sprite = ImageIO.read(new File("Resouces/PLANE4.png"));
-            plane1.sprite = ImageIO.read(new File("Resouces/PLANE1.png"));
-            bullet1A.sprite = ImageIO.read(new File("Resouces/DAN.png"));
-            bullet1B.sprite = ImageIO.read(new File("Resouces/DAN.png"));
-            bullet4A.sprite = ImageIO.read(new File("Resouces/DAN.png"));
-            bullet4B.sprite = ImageIO.read(new File("Resouces/DAN.png"));
-
-
-        }catch (Exception e)
-        {
+        }catch (Exception e){
             System.out.println(e.toString());
         }
+
+        //goi phuong thuc khoi tao may bay
+        initPlane();
 
         //dang ky su kien nhan ban phim va su kien nhan Chuot
         this.addKeyListener(this);
@@ -91,6 +51,14 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         //ve lai
         repaint();
 
+    }
+
+    //Phuont thuc khoi tao May bay Plane
+    private void initPlane()
+    {
+        //su dung phuong thuc khoi tao co htam so de hien thi toa do lan dau tien cua May bay Plane1 va Plane4
+        plane1 = new Plane(200, 450, 3, 1);
+        plane4 = new Plane(90, 450, 4, 4);
     }
 
     //dinh nghia phuong thuc an con tro chuot hien tai
@@ -106,33 +74,11 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     public void paint(Graphics g)
     {
         g.drawImage(background, 0, 0, null);
+        //ve may bay plane1
+        plane1.draw(g);
 
-        if (plane4.hidden == false) {
-            //g.drawImage(plane4.sprite, plane4.getPostionX(), plane4.getPostionY(), null);
-            plane4.draw(g); //ve may bay plane4
-
-        if(bullet4A.hidden == false)
-            //ve dan bullet4A
-            bullet4A.draw(g);
-
-        if (bullet4B.hidden ==false)
-            //ve dan bullet4B
-            bullet4B.draw(g);
-        }
-
-        if (plane1.hidden == false) {
-            //ve may bay plane1
-            plane1.draw(g);
-
-        if (bullet1A.hidden == false)
-            //ve dan bullet1A
-            bullet1A.draw(g);
-
-        if (bullet1B.hidden == false)
-            //ve dan bullet1B
-            bullet1B.draw(g);
-        }
-
+        //ve may bay plane4
+        plane4.draw(g);
     }
 
     @Override
@@ -168,30 +114,6 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
             bullet4A.direction = 5;
             bullet4B.direction = 5;
-        }
-
-        if(e.getKeyChar()=='p') {
-            //an may bay dieu khien bang chuot Mouse
-            plane1.hidden = true;
-            bullet1A.hidden = true;
-            bullet1B.hidden = true;
-
-            //hien thi may bay chay bang ban phim
-            plane4.hidden = false;
-            bullet4A.hidden = false;
-            bullet4B.hidden = false;
-        }
-
-        if(e.getKeyChar()=='c') {
-            //an may bay dieu khien bang ban phim
-            plane4.hidden = true;
-            bullet4A.hidden = true;
-            bullet4B.hidden = true;
-
-            //hien thi may bay chay bang chuot Mouse
-            plane1.hidden = false;
-            bullet1A.hidden = false;
-            bullet1B.hidden = false;
         }
     }
 

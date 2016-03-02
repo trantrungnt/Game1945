@@ -1,6 +1,7 @@
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -18,16 +19,58 @@ public class Plane {
     public int direction;
     public boolean hidden;
 
-    public Plane()
+    //de private phuong thuc khoi tao khong tham so, de ko co ai duoc goi ham nay va su dung
+    private Plane()
     {
         this.postionX = 300;
-        this.postionY =300;
+        this.postionY = 300;
         this.speed = 4;
 
         try{
-            this.sprite = ImageIO.read("Resources/PLANE1.png");
-        }catch (IOException e){
+            this.sprite = ImageIO.read(new File("Resouces/PLANE1.png"));
+        }catch (Exception e){
+            e.toString();
+        }
+    }
 
+    //Phuong thuc khoi tao co tham so
+    public Plane(int postionX, int postionY, int speed, int planeType)
+    {
+        this.postionX = postionX;
+        this.postionY = postionY;
+        this.speed = speed;
+        this.planeType = planeType;
+
+        //xet Kieu may bay de load Anh may bay
+        switch (planeType) {
+            case 1:
+                try{
+                    this.sprite = ImageIO.read(new File("Resouces/PLANE1.png"));
+                }catch (Exception e){
+                    System.out.println(e.toString());
+                }
+                break;
+            case 2:
+                try{
+                    this.sprite = ImageIO.read(new File("Resouces/PLANE2.png"));
+                }catch (Exception e){
+                    System.out.println(e.toString());
+                }
+                break;
+            case 3:
+                try{
+                    this.sprite = ImageIO.read(new File("Resouces/PLANE3.png"));
+                }catch (Exception e){
+                    System.out.println(e.toString());
+                }
+                break;
+            case 4:
+                try{
+                    this.sprite = ImageIO.read(new File("Resouces/PLANE4.png"));
+                }catch (Exception e){
+                    System.out.println(e.toString());
+                }
+                break;
         }
     }
 
