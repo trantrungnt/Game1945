@@ -104,16 +104,8 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
         if(e.getKeyChar() == 'b')
         {
-            //khi nhan phim thi xac dinh toa do cua dan Bullet4A khi khoi tao dau tien
-           /* bullet4A.setPostionX(plane4.getPostionX());
-            bullet4A.setPostionY(plane4.getPostionY());
-
-            //khi nhan phim thi xac dinh toa do cua dan Bullet4B khi khoi tao dau tien
-            bullet4B.setPostionX(plane4.getPostionX() + 55);
-            bullet4B.setPostionY(plane4.getPostionY());
-
-            bullet4A.direction = 5;
-            bullet4B.direction = 5;*/
+            //goi phuong thuc ban cho may bay so 4: Plane4
+            plane4.shot();
         }
     }
 
@@ -203,7 +195,8 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
     @Override
     public void mousePressed(MouseEvent e) {
-
+        //goi phuong thuc ban shod method cua may bay so 1
+        plane1.shot();
     }
 
     @Override
