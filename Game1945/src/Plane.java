@@ -16,7 +16,12 @@ public class Plane {
     private int damage; //do sat thuong
     private int planeType;
     public BufferedImage sprite; //hinh anh cua game2D
-    public int direction;
+
+    public void setDirection(int direction) {
+        this.direction = direction;
+    }
+
+    private int direction;
     public boolean hidden;
 
     //de private phuong thuc khoi tao khong tham so, de ko co ai duoc goi ham nay va su dung

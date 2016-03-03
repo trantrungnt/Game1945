@@ -89,23 +89,23 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     @Override
     public void keyPressed(KeyEvent e) { //khi nhan phim xuong thi kiem tra trang thai cua direction cua Plane4
         if(e.getKeyChar()=='w') //di chuyen len tren
-                plane4.direction = 1;
+                plane4.setDirection(1);
 
         if(e.getKeyChar() == 's') //di chuyen xuong duoi
-                plane4.direction = 2;
+                plane4.setDirection(2);
 
         if(e.getKeyChar() == 'd') //di chuyen sang phai
-                plane4.direction = 3;
+                plane4.setDirection(3);
 
         if(e.getKeyChar() == 'a') //di chuyen sang trai
         {
-            plane4.direction = 4;
+            plane4.setDirection(4);
         }
 
         if(e.getKeyChar() == 'b')
         {
             //khi nhan phim thi xac dinh toa do cua dan Bullet4A khi khoi tao dau tien
-            bullet4A.setPostionX(plane4.getPostionX());
+           /* bullet4A.setPostionX(plane4.getPostionX());
             bullet4A.setPostionY(plane4.getPostionY());
 
             //khi nhan phim thi xac dinh toa do cua dan Bullet4B khi khoi tao dau tien
@@ -113,13 +113,13 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             bullet4B.setPostionY(plane4.getPostionY());
 
             bullet4A.direction = 5;
-            bullet4B.direction = 5;
+            bullet4B.direction = 5;*/
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) { //khi tha phim ra thi may bay plane dung yen
-        plane4.direction = 0;
+        plane4.setDirection(0);
     }
 
     @Override
@@ -130,8 +130,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             //System.out.println(x++);
             //cap nhat lai trang thai cua may bay so 4
             plane4.update();
+            //cap nhat lai trang thai cua may bay so 1
+            plane1.update();
 
-            if (bullet1A.direction==5 && bullet1B.direction==5) {
+            /*if (bullet1A.direction==5 && bullet1B.direction==5) {
                 //toa dan 1A
                 bullet1A.move();
                 //toa do dan 1B
@@ -141,7 +143,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             if (bullet4A.direction ==5 && bullet4B.direction==5){
                 bullet4A.move();
                 bullet4B.move();
-            }
+            }*/
 
             repaint();
 
