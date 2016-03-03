@@ -3,18 +3,17 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Vector;
 
 /**
  * Created by TrungNT on 2/28/2016.
  */
 public class Plane extends PlaneObject{
-
     public void setDirection(int direction) {
         this.direction = direction;
     }
-
     private int direction;
-
+    private Vector<Bullet> vecBullet = new Vector<Bullet>();
 
     //de private phuong thuc khoi tao khong tham so, de ko co ai duoc goi ham nay va su dung
     private Plane()
@@ -108,12 +107,35 @@ public class Plane extends PlaneObject{
     //cap nhat lai trang thai di chuyen cua may bay
     public void update()
     {
-        move();
+        //goi phuong thuc di chuyen move cua may bay
+        this.move();
+
+        //duyet dan va add toa do cua dan
+        for (Bullet bullet : vecBullet) {
+            //cap nhat trang thai cua dan
+            bullet.update();
+        }
     }
 
-    //ve may bay
+    //ve may bay va dan Bullet
     public void draw(Graphics g)
     {
+        //ve may bay
         g.drawImage(this.sprite, this.postionX, this.postionY, null);
+
+        //ve dan bullet
+        for (Bullet bullet : vecBullet) //kieu du lien Bullet trong mang co kieu du lieu Vector la: vecBullet
+        {
+            //goi phuong thuc draw cua bullet: duyet mang vector va ve
+            bullet.draw(g);
+        }
+    }
+
+    //dinh nghia phuong thuc shot cua May bay
+    public void shot()
+    {
+        //khoi tao doi tuong bullet va nhet no vao mang vecBullet co kieu du lieu Vector
+        Bullet bul = new Bullet(this.postionX + 30, this.postionY, 10);
+        vecBullet.add(bul);
     }
 }
