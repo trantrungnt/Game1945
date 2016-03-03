@@ -11,7 +11,7 @@ public class PlaneEnemy extends PlaneObject{
 
     //Khai bao thuoc tinh cua PlaneEnemy
     private int count=0;
-    private Vector<Bullet> bul = new Vector<Bullet>();
+    private Vector<Bullet> vecBullet = new Vector<Bullet>();
 
     private PlaneEnemy()
     {
@@ -56,6 +56,17 @@ public class PlaneEnemy extends PlaneObject{
         //goi phuong thuc move cua may bay dich
         move();
 
+        //60 lan/ 1 giay
+        count++;
+        if (count>120)
+        {
+            //goi phuong thuc ban (khoi tao toa do cua dan)
+            this.shot();
+            count = 0;
+        }
+
+        for (Bullet bul : vecBullet)
+            bul.update();;
 
     }
 
@@ -67,5 +78,16 @@ public class PlaneEnemy extends PlaneObject{
         g.drawImage(this.sprite, this.postionX, this.postionY, null);
 
         //ve dan
+        for (Bullet bul : vecBullet)
+            bul.draw(g);
     }
+
+    //dinh nghia phuong thuc shot de may bay dich ban
+    public void shot()
+    {
+        //xac dinh toa do cua dan o day
+        Bullet bullet = new Bullet(this.postionX+30, this.postionY+59, -5);
+        vecBullet.add(bullet);
+    }
+
 }
