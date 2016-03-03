@@ -3,7 +3,7 @@ import java.awt.image.BufferedImage;
 /**
  * Created by TrungNT on 3/2/2016.
  */
-public class PlaneObject extends GameObject {
+public abstract class PlaneObject extends GameObject {
     //ke thua GameObject de dung thuoc tinh toa do va Anh nen
     protected int speed;
     protected int heath;
