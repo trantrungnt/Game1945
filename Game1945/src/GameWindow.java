@@ -182,8 +182,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     @Override
     public void mouseMoved(MouseEvent e) {
         //toa do cua Plane so 1 theo tro chuot
-        plane1.setPostionX(e.getX());
-        plane1.setPostionY(e.getY());
+        /*plane1.setPostionX(e.getX());
+        plane1.setPostionY(e.getY());*/
+        //goi phuong thuc move co tham so trong class Plane
+        plane1.move(e.getX(), e.getY());
     }
 
     @Override

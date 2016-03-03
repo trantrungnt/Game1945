@@ -22,12 +22,12 @@ public class Plane {
     }
 
     private int direction;
-    public boolean hidden;
+
 
     //de private phuong thuc khoi tao khong tham so, de ko co ai duoc goi ham nay va su dung
     private Plane()
     {
-        this.postionX = 300;
+        /*this.postionX = 300;
         this.postionY = 300;
         this.speed = 4;
 
@@ -35,7 +35,7 @@ public class Plane {
             this.sprite = ImageIO.read(new File("Resouces/PLANE1.png"));
         }catch (Exception e){
             e.toString();
-        }
+        }*/
     }
 
     //Phuong thuc khoi tao co tham so
@@ -136,7 +136,7 @@ public class Plane {
     }
 
     //an tro chuot, sua class Plane sao cho thoa man 2 dieu kien: 1 con chay chuot, 1 con chay phim: them bien kieu dieu khien, ra soat thuoc tinh xem: de access lai quyen truy cap cho no: private + public cho phu hop (get, set cho private)
-    private void move()
+    private void move() //Phuong thuc move khong tham so cho may bay Plane4 su dung ban phim
     {
         if(this.direction ==0)
         {}
@@ -157,6 +157,13 @@ public class Plane {
                                 this.postionX-=this.speed;
                             }
 
+    }
+
+    //Phuong thuc move cho may bay Plane1 su dung Chuot dieu khien
+    public void move(int x, int y)
+    {
+        this.postionX = x;
+        this.postionY = y;
     }
 
     //cap nhat lai trang thai di chuyen cua may bay
