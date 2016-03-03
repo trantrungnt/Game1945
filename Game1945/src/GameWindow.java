@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.Vector;
 
 /**
  * Created by TrungNT on 2/27/2016.
@@ -16,6 +17,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     Bullet bullet1A, bullet1B, bullet4A, bullet4B;
     Image image;
     Graphics seconds;
+    Vector<PlaneEnemy> vecPlaneEnemy = new Vector<PlaneEnemy>();
 
     public GameWindow()
     {
@@ -59,6 +61,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         //su dung phuong thuc khoi tao co htam so de hien thi toa do lan dau tien cua May bay Plane1 va Plane4
         plane1 = new Plane(200, 450, 3, 1);
         plane4 = new Plane(90, 450, 4, 4);
+
+        //khoi tao toa do may bay dich
+        vecPlaneEnemy.add(new PlaneEnemy(50, 100, 4));
+        vecPlaneEnemy.add(new PlaneEnemy(50, 200, 3));
     }
 
     //dinh nghia phuong thuc an con tro chuot hien tai
@@ -79,6 +85,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
         //ve may bay plane4
         plane4.draw(g);
+
+        //duyet tung vector may bay dich ve may bay dich planeEnemy
+        for (PlaneEnemy oplaneEnemy : vecPlaneEnemy)
+            oplaneEnemy.draw(g);
     }
 
     @Override
@@ -125,17 +135,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
             //cap nhat lai trang thai cua may bay so 1
             plane1.update();
 
-            /*if (bullet1A.direction==5 && bullet1B.direction==5) {
-                //toa dan 1A
-                bullet1A.move();
-                //toa do dan 1B
-                bullet1B.move();
-            }
-
-            if (bullet4A.direction ==5 && bullet4B.direction==5){
-                bullet4A.move();
-                bullet4B.move();
-            }*/
+            //cap nhat lai trang thai cua may bay dich
+            //dung vector de them may bay dich (vi may bay dich ta chua biet truoc so luong)
+            for (PlaneEnemy oplaneEnemy : vecPlaneEnemy)
+              oplaneEnemy.update();;
 
             repaint();
 
