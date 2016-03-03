@@ -7,15 +7,7 @@ import java.io.IOException;
 /**
  * Created by TrungNT on 2/28/2016.
  */
-public class Plane {
-    //viet class Plane Abstract, tao 2 loai Enemy co cach ban: 1 loai di vong tron  (viet phuong trinh bau duc (ban 2 vien 1 lan)), 1 con di chuyen binh thuong: ban dan toe 3 huong, doi Dan, cho hinh may bay dich nho lai: dealine: toi thu 6
-    private int postionX;
-    private int postionY;
-    private int speed;
-    private int heath;
-    private int damage; //do sat thuong
-    private int planeType;
-    public BufferedImage sprite; //hinh anh cua game2D
+public class Plane extends PlaneObject{
 
     public void setDirection(int direction) {
         this.direction = direction;
@@ -27,7 +19,7 @@ public class Plane {
     //de private phuong thuc khoi tao khong tham so, de ko co ai duoc goi ham nay va su dung
     private Plane()
     {
-        /*this.postionX = 300;
+        this.postionX = 300;
         this.postionY = 300;
         this.speed = 4;
 
@@ -35,7 +27,7 @@ public class Plane {
             this.sprite = ImageIO.read(new File("Resouces/PLANE1.png"));
         }catch (Exception e){
             e.toString();
-        }*/
+        }
     }
 
     //Phuong thuc khoi tao co tham so
@@ -80,60 +72,7 @@ public class Plane {
     }
 
 
-    //toa do x
-    public void setPostionX(int x)
-    {
-        this.postionX = x;
-    }
 
-    public int getPostionX()
-    {
-        return postionX;
-    }
-
-    //toa do y
-    public void setPostionY(int y)
-    {
-        this.postionY = y;
-    }
-
-    public int getPostionY()
-    {
-        return postionY;
-    }
-
-    //toc do speed
-    public void setSpeed(int td)
-    {
-        this.speed = td;
-    }
-
-    public int getSpeed()
-    {
-        return speed;
-    }
-
-    //suc manh
-    public void setHeath(int healthy)
-    {
-        this.heath = healthy;
-    }
-
-    public int getHeath()
-    {
-        return heath;
-    }
-
-    //do sat thuong
-    public void setDamage(int st)
-    {
-        this.damage = st;
-    }
-
-    public int getDamage()
-    {
-        return damage;
-    }
 
     //an tro chuot, sua class Plane sao cho thoa man 2 dieu kien: 1 con chay chuot, 1 con chay phim: them bien kieu dieu khien, ra soat thuoc tinh xem: de access lai quyen truy cap cho no: private + public cho phu hop (get, set cho private)
     private void move() //Phuong thuc move khong tham so cho may bay Plane4 su dung ban phim

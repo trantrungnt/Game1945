@@ -184,13 +184,13 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         //toa do cua Plane so 1 theo tro chuot
         /*plane1.setPostionX(e.getX());
         plane1.setPostionY(e.getY());*/
-        //goi phuong thuc move co tham so trong class Plane
+        //goi phuong thuc move co tham so trong class Plane de lay toa do chuot
         plane1.move(e.getX(), e.getY());
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        bullet1A.direction = 5;
+        /*bullet1A.direction = 5;
         bullet1B.direction = 5;
         //toa do cua dan 1A
         bullet1A.setPostionX(e.getX());
@@ -198,7 +198,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
         //toa do cua dan 1B
         bullet1B.setPostionX(e.getX() + 58);
-        bullet1B.setPostionY(e.getY());
+        bullet1B.setPostionY(e.getY());*/
     }
 
     @Override

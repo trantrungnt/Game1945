@@ -4,12 +4,8 @@ import java.awt.image.BufferedImage;
 /**
  * Created by TrungNT on 2/29/2016.
  */
-public class Bullet {
-    private int postionX;
-    private int postionY;
-    public int direction;
-    public BufferedImage sprite;
-    public boolean hidden;
+public class Bullet extends GameObject {
+    private int direction;
 
     public void setPostionX(int x)
     {
