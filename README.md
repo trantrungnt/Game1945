@@ -28,7 +28,7 @@
 + [Tham khảo quyền truy cập trong OOP với ngôn ngữ Java](https://www3.ntu.edu.sg/home/ehchua/programming/java/J3a_OOPBasics.html)
 + Tìm hiểu thêm về cách sử dụng và khai báo: Vector, ArrayList và LinkItem trong ngôn ngũ Java
 + [Xem lại phương trình Elip](https://vi.wikipedia.org/wiki/Elíp) hoặc [xem tại đây](https://toanhoc77.wordpress.com/2012/06/25/bai-3-phuong-trinh-duong-elip/)
-+ + [Tham khảo Hệ trục tọa độ](http://tusach.thuvienkhoahoc.com/wiki/H%C3%ACnh_h%E1%BB%8Dc_10/Ch%C6%B0%C6%A1ng_I/%C2%A74._H%E1%BB%87_tr%E1%BB%A5c_t%E1%BB%8Da_%C4%91%E1%BB%99)
++ [Tham khảo Hệ trục tọa độ](http://tusach.thuvienkhoahoc.com/wiki/H%C3%ACnh_h%E1%BB%8Dc_10/Ch%C6%B0%C6%A1ng_I/%C2%A74._H%E1%BB%87_tr%E1%BB%A5c_t%E1%BB%8Da_%C4%91%E1%BB%99)
 
 + Dùng MouseMotionListener để xử lý nhận sự kiện mouseMove và làm theo yêu cầu đề bài
 ```
