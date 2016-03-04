@@ -2,3 +2,7 @@
     1. Phải có 2 máy bay 1 cái đk bằng phím,1 cái bằng chuột.
     2. Cách tạo đạn của anh không được. Khi bấm phím B thì a tạo ra bullet mới bằng cách Bullet bul = new Bullet();
         chứ không phải tạo sẵn xong hidden nó đi
+-3
+    1. chưa thấy con elip
+    2. 2 loại máy bay di chuyển và bắn khác nhau, anh nên tạo 3 lớp riêng cho cno rồi kế thừa từ PlaneEnemy
+    3. bắn ra 3 tia đạn nhưng nó đều là object của 1 class. A để trong 1 vector thôi
