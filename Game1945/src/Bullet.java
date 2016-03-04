@@ -40,16 +40,34 @@ public class Bullet extends GameObject {
         return postionY;
     }
 
-    //phuong thuc di chuyen cua dan Bullet
+    //phuong thuc di chuyen cua dan Bullet: di chuyen thang
     private void move()
     {
+        //di chuyen thang
         this.postionY -= this.speed;
     }
+
+    //phuong thuc di chuyen cua dan Bullet: di chuyen cheo sang trai
+    private void moveCheoTrai()
+    {
+        this.postionY -=this.speed;
+        this.postionX -=1;
+    }
+
+    //phuong thuc di chuyen cua dan Bullet: di chuyen cheo sang phai
+    private void moveCheoPhai()
+    {
+        this.postionY -=this.speed;
+        this.postionX +=1;
+    }
+
 
     //phuong thuc cap nhat trang thai di chuyen cua dan Bullet
     public void update()
     {
         this.move();
+        this.moveCheoTrai();
+        this.moveCheoPhai();
     }
 
     //Phuong thuc ve dan bullet
@@ -63,15 +81,32 @@ public class Bullet extends GameObject {
     {}
 
     //phuong thuc khoi tao co tham so cua dan Bullet
-    public Bullet(int x, int y,int speed) {
+    public Bullet(int x, int y,int speed, int planeType) {
         this.postionX = x;
         this.postionY = y;
         this.speed = speed;
-        try {
-            this.sprite = ImageIO.read(new File("Resouces/DAN.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
+
+
+        //kiem tra may bay ben ta thi hien thi dan DAN.png
+        switch (planeType)
+        {
+            case 0:
+                try {
+                    this.sprite = ImageIO.read(new File("Resouces/DAN.png"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case 1:
+                try {
+                    this.sprite = ImageIO.read(new File("Resouces/_DAN.png"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
         }
+
+
     }
 
 }

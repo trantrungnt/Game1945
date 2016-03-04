@@ -13,7 +13,7 @@ import java.util.Vector;
 public class GameWindow extends Frame implements MouseListener,MouseMotionListener, KeyListener, Runnable{
 
     BufferedImage background;
-    Plane plane4, plane1;  //tham chieu
+    Plane plane4, plane1, plane2;  //tham chieu
     Bullet bullet1A, bullet1B, bullet4A, bullet4B;
     Image image;
     Graphics seconds;
@@ -63,8 +63,9 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         plane4 = new Plane(90, 450, 4, 4);
 
         //khoi tao toa do may bay dich
-        vecPlaneEnemy.add(new PlaneEnemy(50, 100, 4));
-        vecPlaneEnemy.add(new PlaneEnemy(50, 200, 3));
+        vecPlaneEnemy.add(new PlaneEnemy(50, 100, 4, 3));
+        vecPlaneEnemy.add(new PlaneEnemy(50, 200, 3, 3));
+        vecPlaneEnemy.add(new PlaneEnemy(50, 50, 3, 2));
     }
 
     //dinh nghia phuong thuc an con tro chuot hien tai

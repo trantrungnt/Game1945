@@ -135,7 +135,7 @@ public class Plane extends PlaneObject{
     public void shot()
     {
         //khoi tao doi tuong bullet va nhet no vao mang vecBullet co kieu du lieu Vector
-        Bullet bul = new Bullet(this.postionX + 30, this.postionY, 10);
+        Bullet bul = new Bullet(this.postionX + 30, this.postionY, 10, 0);
         vecBullet.add(bul);
     }
 }

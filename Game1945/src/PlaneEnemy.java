@@ -20,19 +20,34 @@ public class PlaneEnemy extends PlaneObject{
 
 
     //phuong thuc khoi tao may bay dich co tham so
-    public PlaneEnemy(int x, int y, int speed)
+    public PlaneEnemy(int x, int y, int speed, int planeType)
     {
         //khoi tao toa do va toc do bay
         this.postionX = x;
         this.postionY = y;
         this.speed = speed;
+        this.planeType = planeType;
 
         //load anh may bay dich
-        try {
-            this.sprite = ImageIO.read(new File("Resouces/PLANE3.PNG"));
-        } catch (IOException e) {
-            e.printStackTrace();
+        switch (planeType)
+        {
+            case 3:
+                try {
+                    this.sprite = ImageIO.read(new File("Resouces/PLANE3.PNG"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case 2:
+                try {
+                    this.sprite = ImageIO.read(new File("Resouces/PLANE2.PNG"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
         }
+
+
     }
 
     //dinh nghia phuong thuc di chuyen cua may bay dich
@@ -86,7 +101,7 @@ public class PlaneEnemy extends PlaneObject{
     public void shot()
     {
         //xac dinh toa do cua dan o day
-        Bullet bullet = new Bullet(this.postionX+30, this.postionY+59, -5);
+        Bullet bullet = new Bullet(this.postionX+30, this.postionY+59, -5, 1);
         vecBullet.add(bullet);
     }
 
