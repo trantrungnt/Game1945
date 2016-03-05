@@ -30,6 +30,7 @@
 + [Xem lại phương trình Elip](https://vi.wikipedia.org/wiki/Elíp) hoặc [xem tại đây](https://toanhoc77.wordpress.com/2012/06/25/bai-3-phuong-trinh-duong-elip/)
 + [Tham khảo Hệ trục tọa độ](http://tusach.thuvienkhoahoc.com/wiki/H%C3%ACnh_h%E1%BB%8Dc_10/Ch%C6%B0%C6%A1ng_I/%C2%A74._H%E1%BB%87_tr%E1%BB%A5c_t%E1%BB%8Da_%C4%91%E1%BB%99)
 + [Tham khảo thuật toán vẽ các đường cơ bản](http://voer.edu.vn/m/gioi-thieu-cac-thuat-toan-ve-va-to-cac-duong-co-ban/6d58afd1)
++ [Tham khảo dùng sin cos với hình tròn, hình elip trong Toán](http://hmath360.blogspot.com/2013/07/su-dung-pt-tham-so-cua-uong-tron-elip.html)
 
 + Dùng MouseMotionListener để xử lý nhận sự kiện mouseMove và làm theo yêu cầu đề bài
 ```
