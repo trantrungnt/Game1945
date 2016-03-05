@@ -112,9 +112,11 @@ public class Plane extends PlaneObject{
 
         //duyet dan va add toa do cua dan
         for (Bullet bullet : vecBullet) {
-            //cap nhat trang thai cua dan
-            bullet.update();
+            //cap nhat trang thai di thang cua dan bullet1
+            bullet.update(0);
         }
+
+
     }
 
     //ve may bay va dan Bullet
@@ -129,13 +131,15 @@ public class Plane extends PlaneObject{
             //goi phuong thuc draw cua bullet: duyet mang vector va ve
             bullet.draw(g);
         }
+
     }
 
     //dinh nghia phuong thuc shot cua May bay
     public void shot()
     {
-        //khoi tao doi tuong bullet va nhet no vao mang vecBullet co kieu du lieu Vector
+        //khoi tao doi tuong bullet va nhet no vao mang vecBullet1 co kieu du lieu Vector
         Bullet bul = new Bullet(this.postionX + 30, this.postionY, 10, 0);
         vecBullet.add(bul);
+
     }
 }

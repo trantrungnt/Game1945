@@ -51,23 +51,32 @@ public class Bullet extends GameObject {
     private void moveCheoTrai()
     {
         this.postionY -=this.speed;
-        this.postionX -=1;
+        this.postionX -=4;
     }
 
     //phuong thuc di chuyen cua dan Bullet: di chuyen cheo sang phai
     private void moveCheoPhai()
     {
         this.postionY -=this.speed;
-        this.postionX +=1;
+        this.postionX +=4;
     }
 
 
     //phuong thuc cap nhat trang thai di chuyen cua dan Bullet
-    public void update()
+    public void update(int status)
     {
-        this.move();
-        this.moveCheoTrai();
-        this.moveCheoPhai();
+        switch (status)
+        {
+            case 0:
+                this.move();
+                break;
+            case 1:
+                this.moveCheoTrai();
+                break;
+            case 2:
+                this.moveCheoPhai();
+                break;
+        }
     }
 
     //Phuong thuc ve dan bullet

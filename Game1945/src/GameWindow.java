@@ -14,6 +14,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
     BufferedImage background;
     Plane plane4, plane1, plane2;  //tham chieu
+    PlaneEnemy oplaneEnemy2;
     Bullet bullet1A, bullet1B, bullet4A, bullet4B;
     Image image;
     Graphics seconds;
@@ -66,6 +67,9 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         vecPlaneEnemy.add(new PlaneEnemy(50, 100, 4, 3));
         vecPlaneEnemy.add(new PlaneEnemy(50, 200, 3, 3));
         vecPlaneEnemy.add(new PlaneEnemy(50, 50, 3, 2));
+
+        //Khoi tao 1 may bay dich ban 3 luong dan
+        oplaneEnemy2 = new PlaneEnemy(50, 50, 3, 2);
     }
 
     //dinh nghia phuong thuc an con tro chuot hien tai
@@ -88,8 +92,9 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         plane4.draw(g);
 
         //duyet tung vector may bay dich ve may bay dich planeEnemy
-        for (PlaneEnemy oplaneEnemy : vecPlaneEnemy)
-            oplaneEnemy.draw(g);
+        /*for (PlaneEnemy oplaneEnemy : vecPlaneEnemy)
+            oplaneEnemy.draw(g);*/
+        oplaneEnemy2.draw(g);
     }
 
     @Override
@@ -138,8 +143,10 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
             //cap nhat lai trang thai cua may bay dich
             //dung vector de them may bay dich (vi may bay dich ta chua biet truoc so luong)
-            for (PlaneEnemy oplaneEnemy : vecPlaneEnemy)
-              oplaneEnemy.update();;
+            /*for (PlaneEnemy oplaneEnemy : vecPlaneEnemy)
+              oplaneEnemy.update();*/
+
+            oplaneEnemy2.update();
 
             repaint();
 
