@@ -53,25 +53,28 @@ public class PlaneEnemy extends PlaneObject{
     }
 
     //dinh nghia phuong thuc di chuyen cua may bay dich
-    private void move()
+    private void move(int moveType)
     {
-        //may bay dich di chuyen sang ngang
-        this.postionX += this.speed;
+        switch (0)
+        {
+            case 0:
+                //goi phuong thuc di chuyen sang ngang cho may bay PlaneEnemy
+                moveHorizontal();
+                break;
+            case 1:
+                //di chuyen may bay dich PlaneEnemy theo hinh Elip
+                moveElip();
+                break;
+        }
 
-        //may bay dich di chuyen ra khoi man hinh ben trai --> ra ngoai truc tung Oy
-        if(this.postionX <= 0)
-            this.speed =- this.speed;
 
-        //may bay dich di chuyen ra khoi man hinh ben phai --> ra ngoai va lon hon man hinh x = 400
-        if (this.postionX >= 400)
-            this.speed =-this.speed;
     }
 
     //dinh nghia phuong thuc cap nhat trang thai cua may bay dich
     public void update()
     {
         //goi phuong thuc move cua may bay dich
-        move();
+        move(0);
 
         //60 lan/ 1 giay
         count++;
@@ -117,19 +120,43 @@ public class PlaneEnemy extends PlaneObject{
     }
 
     //dinh nghia phuong thuc shot de may bay dich ban
-    public void shot()
-    {
+    public void shot() {
         //xac dinh toa do cua dan bullet 1 o day
-        Bullet bullet1 = new Bullet(this.postionX+30, this.postionY+59, -5, 1);
+        Bullet bullet1 = new Bullet(this.postionX + 30, this.postionY + 59, -5, 1);
         vecBullet1.add(bullet1);
 
         //xac dinh toa do cua dan bullet 2 o day
-        Bullet bullet2 = new Bullet(this.postionX+30, this.postionY+59, -5, 1);
+        Bullet bullet2 = new Bullet(this.postionX + 30, this.postionY + 59, -5, 1);
         vecBullet2.add(bullet2);
 
         //xac dinh toa do cua dan bullet 3 tai day
-        Bullet bullet3 = new Bullet(this.postionX+30, this.postionY+59, -5, 1);
+        Bullet bullet3 = new Bullet(this.postionX + 30, this.postionY + 59, -5, 1);
         vecBullet3.add(bullet3);
+    }
+
+    //Phuong thuc di chuyen cua may bay PlaneEnemy di chuyen hinh elip
+    private void moveElip()
+    {
+        if(Math.pow(this.postionX + 150, 2)/25 + Math.pow(this.postionY + 150, 2)/16 ==1)
+        {
+            this.postionX = this.postionX + 150;
+            this.postionY = this.postionY + 150;
+        }
+
+    }
+
+    //Phuong thuc di chuyen cua may bay PlaneEnemy di chuyen theo phuong ngan
+    private void moveHorizontal(){
+        //may bay dich di chuyen sang ngang
+        this.postionX += this.speed;
+
+        //may bay dich di chuyen ra khoi man hinh ben trai --> ra ngoai truc tung Oy
+        if(this.postionX <= 0)
+            this.speed =- this.speed;
+
+        //may bay dich di chuyen ra khoi man hinh ben phai --> ra ngoai va lon hon man hinh x = 400
+        if (this.postionX >= 400)
+            this.speed =-this.speed;
     }
 
 }
