@@ -1,10 +1,13 @@
 import java.awt.*;
+import java.util.Vector;
 
 /**
  * Created by TrungNT on 3/6/2016.
  */
 public class PlaneEnemyCircle extends PlaneEnemy{
-    private int hinhtron=0;
+    private int hinhtron=0; //dung de tang goc cho hinh tron
+    private int count=0;
+    private Vector<Bullet> vecBul = new Vector<>();
 
     //phuong thuc khoi tao cua PlaneEnemyCircle khong tham so
     private PlaneEnemyCircle()
@@ -22,8 +25,8 @@ public class PlaneEnemyCircle extends PlaneEnemy{
     private void moveCircle()
     {
         hinhtron++;
-        this.postionX += (double)(15*Math.sin(hinhtron*0.09));
-        this.postionY += (double)(15*Math.cos(hinhtron*0.09));
+        this.postionX += (double)(5*Math.sin(hinhtron*0.09));
+        this.postionY += (double)(5*Math.cos(hinhtron*0.09));
 
         System.out.println("X=" + this.postionX);
         System.out.println("Y=" + this.postionY);
@@ -34,11 +37,37 @@ public class PlaneEnemyCircle extends PlaneEnemy{
     {
         //goi phuong thuc move
         this.moveCircle();
+
+        count++;
+        if (count>120) {
+            //goi phuong thuc di chuyen cua dan
+            this.shot();
+
+            count=0;
+        }
+
+        //cap nhat lai trang thai: toa do cua dan
+        for (Bullet bul : vecBul)
+            bul.update(0);
     }
 
     //ve may bay PlaneEnnemyCircle
     public void draw(Graphics g)
     {
+        //goi phuong thuc ve cua lop PlaneEnemy
         super.draw(g);
+
+        //ve dan cho may bay PlaneEnemyCircle
+        for (Bullet bul : vecBul)
+            bul.draw(g);
     }
+
+    //Xac dinh toa do cua dan may bay dich bay
+    public void shot()
+    {
+        //khoi tao toa do cua Bullet
+        Bullet bullet = new Bullet(postionX + 30, postionY +59, -5, 1);
+        vecBul.add(bullet);
+    }
+
 }

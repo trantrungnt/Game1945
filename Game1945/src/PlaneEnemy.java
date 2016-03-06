@@ -8,6 +8,7 @@ import java.util.Vector;
  * Created by TrungNT on 3/3/2016.
  */
 public class PlaneEnemy extends PlaneObject{
+
     //phuong thuc khoi tao cua PlaneEnemy
     protected PlaneEnemy() //nen de protected va chi cho class ke thua no su dung ham khoi tao khong tham so, dung public cung duoc nhung khong nen
     {

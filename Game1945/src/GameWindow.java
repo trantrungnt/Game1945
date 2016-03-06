@@ -65,7 +65,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
         //khoi tao toa do may bay dich
         planeEnemyHorizonal1 = new PlaneEnemyHorizontal(100, 50, 3, 2);
-        planeEnemyCircle1 = new PlaneEnemyCircle(100, 150, 4, 3);
+        planeEnemyCircle1 = new PlaneEnemyCircle(100, 150, 3, 3);
     }
 
     //dinh nghia phuong thuc an con tro chuot hien tai
