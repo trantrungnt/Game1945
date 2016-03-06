@@ -15,7 +15,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
     BufferedImage background;
     Plane plane4, plane1, plane2;  //tham chieu
     PlaneEnemyHorizontal planeEnemyHorizonal1;
-
+    PlaneEnemyCircle planeEnemyCircle1;
     Image image;
     Graphics seconds;
     Vector<PlaneEnemy> vecPlaneEnemy = new Vector<PlaneEnemy>();
@@ -65,6 +65,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
 
         //khoi tao toa do may bay dich
         planeEnemyHorizonal1 = new PlaneEnemyHorizontal(100, 50, 3, 2);
+        planeEnemyCircle1 = new PlaneEnemyCircle(100, 150, 4, 3);
     }
 
     //dinh nghia phuong thuc an con tro chuot hien tai
@@ -90,6 +91,7 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
         /*for (PlaneEnemy oplaneEnemy : vecPlaneEnemy)
             oplaneEnemy.draw(g);*/
         planeEnemyHorizonal1.draw(g);
+        planeEnemyCircle1.draw(g);
     }
 
     @Override
@@ -142,6 +144,8 @@ public class GameWindow extends Frame implements MouseListener,MouseMotionListen
               oplaneEnemy.update();*/
 
             planeEnemyHorizonal1.update();
+
+            planeEnemyCircle1.update();
 
             repaint();
 

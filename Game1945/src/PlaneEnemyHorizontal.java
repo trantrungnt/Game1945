@@ -49,6 +49,7 @@ public class PlaneEnemyHorizontal extends PlaneEnemy {
         }*/
     }
 
+    //ve may bay dich
     public void draw(Graphics g)
     {
         super.draw(g);
