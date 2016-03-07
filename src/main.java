@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Created by TrungNT on 2/27/2016.
  */
-public class Main {
+public class main {
     public static void main(String[] args)
     {
         GameWindow oGameWindow = new GameWindow();

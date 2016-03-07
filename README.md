@@ -19,6 +19,7 @@
  + Tạo 2 máy bay Enemy với 2 cách bắn: 1 loại máy bay đi đường eclip và bắn 2 viên 1 lần + 1 máy bay bay kiểu bình thường và bắn tóe ra 3 hướng
 + Đổi đạn cho Máy bay của bên ta
 + Cho hình máy bay nhỏ lại 
++ Cho 1 đàn máy bay bay dạng hình sin, mỗi 1 máy bay cứ sau 2 giây thì bắn (máy bay thứ 2 đợi máy bay thứ 1 bắn xong thì mới máy bay thứ 2 mới bắn đạn)
 
 ##Công cụ phát triển
 + Bộ công cụ IntelliJ IDEA version 15.0.3
