@@ -34,6 +34,13 @@
 + [Tham khảo thuật toán vẽ các đường cơ bản](http://voer.edu.vn/m/gioi-thieu-cac-thuat-toan-ve-va-to-cac-duong-co-ban/6d58afd1)
 + [Tham khảo dùng sin cos với hình tròn, hình elip trong Toán](http://hmath360.blogspot.com/2013/07/su-dung-pt-tham-so-cua-uong-tron-elip.html)
 + [Tham khảo phương trình dạng hình sin: Biên độ A](https://vi.wikipedia.org/wiki/Bi%C3%AAn_%C4%91%E1%BB%99)
+```
+Biên độ là một đại lượng vô hướng, không âm đặc trưng cho độ lớn của dao động.
+
+Trong tín hiệu hình sin x = A sin(ωt+φ) thì A là biên độ dao động (hay li độ cực đại) (Đơn vị là m hay cm).
+
+BIên độ phụ thuộc vào cách kích thích dao động và gốc thời gian.
+```
 
 + Dùng MouseMotionListener để xử lý nhận sự kiện mouseMove và làm theo yêu cầu đề bài
 ```
