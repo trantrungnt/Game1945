@@ -20,6 +20,7 @@
 + Đổi đạn cho Máy bay của bên ta
 + Cho hình máy bay nhỏ lại 
 + Cho 1 đàn máy bay bay dạng hình sin, mỗi 1 máy bay cứ sau 2 giây thì bắn (máy bay thứ 2 đợi máy bay thứ 1 bắn xong thì mới máy bay thứ 2 mới bắn đạn)
++ Thêm chương ngại vật: núi, đảo, chim bay ngẫu nhiên
 
 ##Công cụ phát triển
 + Bộ công cụ IntelliJ IDEA version 15.0.3
