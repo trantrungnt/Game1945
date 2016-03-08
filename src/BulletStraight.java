@@ -16,14 +16,10 @@ public class BulletStraight extends Bullet implements IMove{
         this.postionY -= this.speed;
     }
 
-    public void update()
-    {
-        move();
-    }
-
+    //phuong thuc ve cua dan BulletStraight
     public void draw(Graphics g)
     {
-        g.drawImage(sprite, postionX, postionY, null);
+        super.draw(g);
     }
 
 }
