@@ -77,8 +77,7 @@ public class PlaneEnemyHorizontal extends PlaneEnemy {
         BulletDiagonal bulletDiagonalLeft = new BulletDiagonal(postionX +30, postionY + 59, 5, 1);
         BulletDiagonal bulletDiagonalRight = new BulletDiagonal(postionX +30, postionY + 59, -5, 1);
         BulletStraight bulletStraight = new BulletStraight(postionX + 30, postionY + 59, -5, 1);
-        //for (IMove bulMove : vecIMove)
-          //  if ( bulMove instanceof BulletDiagonal)
+
         vecIMove.add(bulletDiagonalLeft);
         vecIMove.add(bulletDiagonalRight);
         vecIMove.add(bulletStraight);
