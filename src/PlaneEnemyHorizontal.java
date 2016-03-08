@@ -50,27 +50,37 @@ public class PlaneEnemyHorizontal extends PlaneEnemy {
             count = 0;
         }
 
-        //cap nhat lai trang thai cua BulletDiogbak
-        for (IMove bulMove : vecIMove)
+        //cap nhat lai trang thai cua BulletDiagonal va BulletStraight
+        for (IMove bulMove : vecIMove) {
             if (bulMove instanceof BulletDiagonal)
                 bulMove.move();
+            if (bulMove instanceof BulletStraight)
+                bulMove.move();
+        }
     }
 
     //ve may bay dich
     public void draw(Graphics g)
     {
         super.draw(g);
-        for (IMove bulMove : vecIMove)
-          if (bulMove instanceof BulletDiagonal)
-            bulMove.draw(g);
+        for (IMove bulMove : vecIMove) {
+            if (bulMove instanceof BulletDiagonal)
+                bulMove.draw(g);
+            if (bulMove instanceof BulletStraight)
+                bulMove.draw(g);
+        }
     }
 
     //khoi tao toa do cho dan
     public void shot()
     {
-        BulletDiagonal bulletDiagonal = new BulletDiagonal(postionX +30, postionY + 59, 5, 1);
+        BulletDiagonal bulletDiagonalLeft = new BulletDiagonal(postionX +30, postionY + 59, 5, 1);
+        BulletDiagonal bulletDiagonalRight = new BulletDiagonal(postionX +30, postionY + 59, -5, 1);
+        BulletStraight bulletStraight = new BulletStraight(postionX + 30, postionY + 59, -5, 1);
         //for (IMove bulMove : vecIMove)
           //  if ( bulMove instanceof BulletDiagonal)
-                            vecIMove.add(bulletDiagonal);
+        vecIMove.add(bulletDiagonalLeft);
+        vecIMove.add(bulletDiagonalRight);
+        vecIMove.add(bulletStraight);
     }
 }
