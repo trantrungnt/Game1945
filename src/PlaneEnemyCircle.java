@@ -7,7 +7,7 @@ import java.util.Vector;
 public class PlaneEnemyCircle extends PlaneEnemy{
     private int hinhtron=0; //dung de tang goc cho hinh tron
     private int count=0;
-    private Vector<Bullet> vecBul = new Vector<>();
+    private Vector<IMove> vecBul = new Vector<>();
 
     //phuong thuc khoi tao cua PlaneEnemyCircle khong tham so
     private PlaneEnemyCircle()
@@ -47,8 +47,9 @@ public class PlaneEnemyCircle extends PlaneEnemy{
         }
 
         //cap nhat lai trang thai: toa do cua dan
-        for (Bullet bul : vecBul)
-            bul.update(0);
+        for (IMove typebullet : vecBul)
+         if (typebullet instanceof BulletStraight)
+            typebullet.move();
     }
 
     //ve may bay PlaneEnnemyCircle
@@ -58,15 +59,16 @@ public class PlaneEnemyCircle extends PlaneEnemy{
         super.draw(g);
 
         //ve dan cho may bay PlaneEnemyCircle
-        for (Bullet bul : vecBul)
-            bul.draw(g);
+        for (IMove typebullet : vecBul)
+            if (typebullet instanceof BulletStraight)
+               typebullet.draw(g);
     }
 
     //Xac dinh toa do cua dan may bay dich bay
     public void shot()
     {
         //khoi tao toa do cua Bullet
-        Bullet bullet = new Bullet(postionX + 30, postionY +59, -5, 1);
+        BulletStraight bullet = new BulletStraight(postionX + 30, postionY +59, -5, 1);
         vecBul.add(bullet);
     }
 

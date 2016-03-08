@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * Created by TrungNT on 2/29/2016.
  */
-public class Bullet extends GameObject {
+public abstract class Bullet extends GameObject implements IMove{
     private int direction;
 
     public int getSpeed() {
@@ -18,7 +18,7 @@ public class Bullet extends GameObject {
         this.speed = speed;
     }
 
-    private int speed;
+    protected int speed;
 
     public void setPostionX(int x)
     {
@@ -40,12 +40,7 @@ public class Bullet extends GameObject {
         return postionY;
     }
 
-    //phuong thuc di chuyen cua dan Bullet: di chuyen thang
-    private void move()
-    {
-        //di chuyen thang
-        this.postionY -= this.speed;
-    }
+
 
     //phuong thuc di chuyen cua dan Bullet: di chuyen cheo sang trai
     private void moveCheoTrai()

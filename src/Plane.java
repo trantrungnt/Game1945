@@ -13,7 +13,7 @@ public class Plane extends PlaneObject{
         this.direction = direction;
     }
     private int direction;
-    private Vector<Bullet> vecBullet = new Vector<Bullet>();
+    private Vector<IMove> vecBullet = new Vector<IMove>();
 
     //de private phuong thuc khoi tao khong tham so, de ko co ai duoc goi ham nay va su dung
     private Plane()
@@ -111,9 +111,9 @@ public class Plane extends PlaneObject{
         this.move();
 
         //duyet dan va add toa do cua dan
-        for (Bullet bullet : vecBullet) {
+        for (IMove typeOfBullet : vecBullet) {
             //cap nhat trang thai di thang cua dan bullet1
-            bullet.update(0);
+            typeOfBullet.move();
         }
 
 
@@ -126,10 +126,11 @@ public class Plane extends PlaneObject{
         g.drawImage(this.sprite, this.postionX, this.postionY, null);
 
         //ve dan bullet
-        for (Bullet bullet : vecBullet) //kieu du lien Bullet trong mang co kieu du lieu Vector la: vecBullet
+        for (IMove typeOfBullet : vecBullet) //kieu du lien Bullet trong mang co kieu du lieu Vector la: vecBullet
         {
             //goi phuong thuc draw cua bullet: duyet mang vector va ve
-            bullet.draw(g);
+            if (typeOfBullet instanceof BulletStraight)
+                typeOfBullet.draw(g);
         }
 
     }
@@ -138,7 +139,7 @@ public class Plane extends PlaneObject{
     public void shot()
     {
         //khoi tao doi tuong bullet va nhet no vao mang vecBullet1 co kieu du lieu Vector
-        Bullet bul = new Bullet(this.postionX + 30, this.postionY, 10, 0);
+        BulletStraight bul = new BulletStraight(this.postionX + 30, this.postionY, 10, 0);
         vecBullet.add(bul);
 
     }
