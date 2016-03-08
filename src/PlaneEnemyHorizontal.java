@@ -1,16 +1,18 @@
 import java.awt.*;
+import java.util.Vector;
 
 /**
  * Created by TrungNT on 3/6/2016.
  */
 public class PlaneEnemyHorizontal extends PlaneEnemy {
     private int count=0;
+    private Vector<IMove> vecIMove = new Vector<>();
 
     //phuong thuc khoi tao khong tham so
     private PlaneEnemyHorizontal()
     {
-        super();
         //su dung lai phuong thuc cua PlaneEnemy
+        super();
     }
 
     //phuong thuc khoi tao cua PlaneEnemyHorizontal
@@ -40,18 +42,35 @@ public class PlaneEnemyHorizontal extends PlaneEnemy {
         //cap nhat lai toa do cua PlaneEnemyHorizontal
         this.move();
         //60 lan/ 1 giay
-        /*count++;
+        count++;
         if (count>120)
         {
             //goi phuong thuc ban (khoi tao toa do cua dan)
             this.shot();
             count = 0;
-        }*/
+        }
+
+        //cap nhat lai trang thai cua BulletDiogbak
+        for (IMove bulMove : vecIMove)
+            if (bulMove instanceof BulletDiagonal)
+                bulMove.move();
     }
 
     //ve may bay dich
     public void draw(Graphics g)
     {
         super.draw(g);
+        for (IMove bulMove : vecIMove)
+          if (bulMove instanceof BulletDiagonal)
+            bulMove.draw(g);
+    }
+
+    //khoi tao toa do cho dan
+    public void shot()
+    {
+        BulletDiagonal bulletDiagonal = new BulletDiagonal(postionX +30, postionY + 59, 5, 1);
+        //for (IMove bulMove : vecIMove)
+          //  if ( bulMove instanceof BulletDiagonal)
+                            vecIMove.add(bulletDiagonal);
     }
 }

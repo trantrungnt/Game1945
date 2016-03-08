@@ -13,11 +13,11 @@ public class BulletDiagonal extends Bullet implements IMove{
     //dinh nghia phuong thuc di chuyen cheo trai phai
     @Override
     public void move() {
-        if(this.speed > 0) { //di chuyen cheo trai
-            this.postionY += this.speed;
-            this.postionX -= this.speed;
+        if(this.speed < 0) { //di chuyen cheo trai
+            this.postionY -= this.speed;
+            this.postionX += this.speed;
         }
-        else{ //di chuyen cheo phai
+        if(this.speed > 0){ //di chuyen cheo phai
             this.postionY += this.speed;
             this.postionX += this.speed;
         }

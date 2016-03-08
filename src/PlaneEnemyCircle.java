@@ -69,7 +69,10 @@ public class PlaneEnemyCircle extends PlaneEnemy{
     {
         //khoi tao toa do cua Bullet
         BulletStraight bullet = new BulletStraight(postionX + 30, postionY +59, -5, 1);
-        vecBul.add(bullet);
+
+        //for (IMove bulMove : vecBul)
+          //  if (bulMove instanceof BulletStraight)
+                    vecBul.add(bullet);
     }
 
 }
