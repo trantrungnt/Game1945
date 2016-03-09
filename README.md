@@ -34,6 +34,8 @@
 + [Tham khảo thuật toán vẽ các đường cơ bản](http://voer.edu.vn/m/gioi-thieu-cac-thuat-toan-ve-va-to-cac-duong-co-ban/6d58afd1)
 + [Tham khảo dùng sin cos với hình tròn, hình elip trong Toán](http://hmath360.blogspot.com/2013/07/su-dung-pt-tham-so-cua-uong-tron-elip.html)
 + [Tham khảo phương trình dạng hình sin: Biên độ A](https://vi.wikipedia.org/wiki/Bi%C3%AAn_%C4%91%E1%BB%99)
++ [Trang web xử lý ảnh dùng cho xử lý các ảnh trong Game](http://www.online-image-editor.com/)
+
 ```
 Biên độ là một đại lượng vô hướng, không âm đặc trưng cho độ lớn của dao động.
 
@@ -175,4 +177,17 @@ public class Bullet {
         g.drawImage(this.sprite, this.postionX, this.postionY,  null);
     }
 }
+```
+
++ Cài đặt di chuyển máy bay PlaneEnemySin bay theo dạng hình sin
+```
+ //dinh nghia phuong thuc di chuyen hinh sin: Biên độ A=50, góc angle là kiểu double (góc angle quay 1 goc PI/40), tọa độ máy bay x, y cũng là kiểu double
+    private void move()
+    {
+        this.angle += Math.PI / 40;
+        //di chuyen dang hinh sin
+        this.postionX += this.speed;
+        //do thi dang hinh xin: bien do A=50, goc quay PI/40*180 do
+        this.postionY = 50 * Math.sin(angle) + 100;
+    }
 ```

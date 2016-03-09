@@ -28,16 +28,16 @@
       <file leaf-file-name="PlaneEnemySin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PlaneEnemySin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.26213592">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.4699029">
+              <caret line="29" column="5" selection-start-line="21" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#310#311#0" expanded="true" />
                 <element signature="e#333#334#0" expanded="true" />
                 <element signature="e#413#414#0" expanded="true" />
                 <element signature="e#457#458#0" expanded="true" />
-                <element signature="e#1015#1016#0" expanded="true" />
-                <element signature="e#1044#1045#0" expanded="true" />
+                <element signature="e#1014#1015#0" expanded="true" />
+                <element signature="e#1043#1044#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -880,16 +880,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PlaneEnemySin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.26213592">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.4699029">
+          <caret line="29" column="5" selection-start-line="21" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#310#311#0" expanded="true" />
             <element signature="e#333#334#0" expanded="true" />
             <element signature="e#413#414#0" expanded="true" />
             <element signature="e#457#458#0" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
-            <element signature="e#1044#1045#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
           </folding>
         </state>
       </provider>
