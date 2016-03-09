@@ -16,7 +16,7 @@ public class PlaneEnemyHorizontal extends PlaneEnemy {
     }
 
     //phuong thuc khoi tao cua PlaneEnemyHorizontal
-    public PlaneEnemyHorizontal(int x, int y, int speed, int planeType) {
+    public PlaneEnemyHorizontal(double x, double y, double speed, int planeType) {
         //goi phuong thuc khoi tao cua PlaneEnemy
         super(x, y, speed, planeType);
     }

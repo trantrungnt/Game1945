@@ -30,7 +30,7 @@ public class Plane extends PlaneObject{
     }
 
     //Phuong thuc khoi tao co tham so
-    public Plane(int postionX, int postionY, int speed, int planeType)
+    public Plane(double postionX, double postionY, double speed, int planeType)
     {
         this.postionX = postionX;
         this.postionY = postionY;
@@ -98,7 +98,7 @@ public class Plane extends PlaneObject{
     }
 
     //Phuong thuc move cho may bay Plane1 su dung Chuot dieu khien
-    public void move(int x, int y)
+    public void move(double x, double y)
     {
         this.postionX = x;
         this.postionY = y;
@@ -123,7 +123,7 @@ public class Plane extends PlaneObject{
     public void draw(Graphics g)
     {
         //ve may bay
-        g.drawImage(this.sprite, this.postionX, this.postionY, null);
+        g.drawImage(this.sprite, (int)this.postionX, (int)this.postionY, null);
 
         //ve dan bullet
         for (IMove typeOfBullet : vecBullet) //kieu du lien Bullet trong mang co kieu du lieu Vector la: vecBullet

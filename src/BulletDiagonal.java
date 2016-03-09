@@ -6,7 +6,7 @@ import java.awt.*;
 public class BulletDiagonal extends Bullet implements IMove{
 
     //phuong thcu khoi tao co tham so cua class BulletDiagonal
-    public BulletDiagonal(int x, int y, int speed, int planeType) {
+    public BulletDiagonal(double x, double y, double speed, int planeType) {
         super(x, y, speed, planeType);
     }
 

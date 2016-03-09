@@ -17,7 +17,7 @@ public class PlaneEnemy extends PlaneObject{
 
 
     //phuong thuc khoi tao may bay dich co tham so
-    public PlaneEnemy(int x, int y, int speed, int planeType)
+    public PlaneEnemy(double x, double y, double speed, int planeType)
     {
         //khoi tao toa do va toc do bay
         this.postionX = x;
@@ -51,7 +51,7 @@ public class PlaneEnemy extends PlaneObject{
     public void draw(Graphics g)
     {
         //ve may bay dich
-        g.drawImage(this.sprite, this.postionX, this.postionY, null);
+        g.drawImage(this.sprite, (int)this.postionX, (int)this.postionY, null);
     }
 
 

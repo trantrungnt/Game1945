@@ -16,7 +16,7 @@ public class PlaneEnemyCircle extends PlaneEnemy{
     }
 
     //phuong thuc khoi tao cua PlaneEnemyCircle co tham so
-    public PlaneEnemyCircle(int x, int y, int speed, int planeType)
+    public PlaneEnemyCircle(double x, double y, double speed, int planeType)
     {
         super(x, y, speed, planeType);
     }
@@ -25,8 +25,8 @@ public class PlaneEnemyCircle extends PlaneEnemy{
     private void moveCircle()
     {
         hinhtron++;
-        this.postionX += (double)(5*Math.sin(hinhtron*0.09));
-        this.postionY += (double)(5*Math.cos(hinhtron*0.09));
+        this.postionX += 5*Math.sin(hinhtron*0.09);
+        this.postionY += 5*Math.cos(hinhtron*0.09);
 
         System.out.println("X=" + this.postionX);
         System.out.println("Y=" + this.postionY);

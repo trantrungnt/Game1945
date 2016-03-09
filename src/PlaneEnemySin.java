@@ -13,7 +13,7 @@ public class PlaneEnemySin extends PlaneEnemy {
         super();
     }
 
-    public PlaneEnemySin(int x, int y, int speed, int planType)
+    public PlaneEnemySin(double x, double y, double speed, int planType)
     {
         super(x, y, speed, planType);
     }

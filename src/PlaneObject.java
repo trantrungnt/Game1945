@@ -5,62 +5,62 @@ import java.awt.image.BufferedImage;
  */
 public abstract class PlaneObject extends GameObject {
     //ke thua GameObject de dung thuoc tinh toa do va Anh nen
-    protected int speed;
-    protected int heath;
-    protected int damage; //do sat thuong
-    protected int planeType;
+    protected double speed;
+    protected double heath;
+    protected double damage; //do sat thuong
+    protected double planeType;
 
     //toa do x
-    public void setPostionX(int x)
+    public void setPostionX(double x)
     {
         this.postionX = x;
     }
 
-    public int getPostionX()
+    public double getPostionX()
     {
         return postionX;
     }
 
     //toa do y
-    public void setPostionY(int y)
+    public void setPostionY(double y)
     {
         this.postionY = y;
     }
 
-    public int getPostionY()
+    public double getPostionY()
     {
         return postionY;
     }
 
     //toc do speed
-    public void setSpeed(int td)
+    public void setSpeed(double td)
     {
         this.speed = td;
     }
 
-    public int getSpeed()
+    public double getSpeed()
     {
         return speed;
     }
 
     //suc manh
-    public void setHeath(int healthy)
+    public void setHeath(double healthy)
     {
         this.heath = healthy;
     }
 
-    public int getHeath()
+    public double getHeath()
     {
         return heath;
     }
 
     //do sat thuong
-    public void setDamage(int st)
+    public void setDamage(double st)
     {
         this.damage = st;
     }
 
-    public int getDamage()
+    public double getDamage()
     {
         return damage;
     }

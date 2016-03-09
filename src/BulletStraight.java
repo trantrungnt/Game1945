@@ -5,7 +5,7 @@ import java.awt.*;
  */
 public class BulletStraight extends Bullet implements IMove{
     //Phuong thuc khoi tao co tham so cua BulletStraight
-    public BulletStraight(int x, int y, int speed, int planeType) {
+    public BulletStraight(double x, double y, double speed, int planeType) {
         super(x, y, speed, planeType);
     }
 

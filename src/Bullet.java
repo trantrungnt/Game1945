@@ -10,32 +10,32 @@ import java.io.IOException;
 public abstract class Bullet extends GameObject implements IMove{
     private int direction;
 
-    public int getSpeed() {
+    public double getSpeed() {
         return speed;
     }
 
-    public void setSpeed(int speed) {
+    public void setSpeed(double speed) {
         this.speed = speed;
     }
 
-    protected int speed;
+    protected double speed;
 
-    public void setPostionX(int x)
+    public void setPostionX(double x)
     {
         this.postionX = x;
     }
 
-    public int getPostionX()
+    public double getPostionX()
     {
         return postionX;
     }
 
-    public void setPostionY(int y)
+    public void setPostionY(double y)
     {
         this.postionY = y;
     }
 
-    public int getPostionY()
+    public double getPostionY()
     {
         return postionY;
     }
@@ -57,27 +57,10 @@ public abstract class Bullet extends GameObject implements IMove{
     }
 
 
-    //phuong thuc cap nhat trang thai di chuyen cua dan Bullet
-    public void update(int status)
-    {
-        switch (status)
-        {
-            case 0:
-                this.move();
-                break;
-            case 1:
-                this.moveCheoTrai();
-                break;
-            case 2:
-                this.moveCheoPhai();
-                break;
-        }
-    }
-
     //Phuong thuc ve dan bullet
     public void draw(Graphics g)
     {
-        g.drawImage(this.sprite, this.postionX, this.postionY,  null);
+        g.drawImage(this.sprite, (int) this.postionX, (int)this.postionY, null);
     }
 
     //phuong thuc khoi tao khong tham so cua dan Bullet
@@ -85,7 +68,7 @@ public abstract class Bullet extends GameObject implements IMove{
     {}
 
     //phuong thuc khoi tao co tham so cua dan Bullet
-    public Bullet(int x, int y,int speed, int planeType) {
+    public Bullet(double x, double y,double speed, int planeType) {
         this.postionX = x;
         this.postionY = y;
         this.speed = speed;
