@@ -26,7 +26,7 @@ public class PlaneEnemySin extends PlaneEnemy{
         //di chuyen dang hinh sin
         this.postionX += this.speed;
         //do thi dang hinh xin: bien do A=50, goc quay PI/40*180 do
-        this.postionY = 50 * Math.sin(angle) + 100;
+        this.postionY = 50 * Math.sin(angle) + 150;
     }
 
     //phuong thuc cap nhat lai toa do di chuyen cua may bay PlaneEnemySin
