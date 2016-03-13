@@ -38,6 +38,7 @@
 + [Tham khảo phương trình dạng hình sin: Biên độ A](https://vi.wikipedia.org/wiki/Bi%C3%AAn_%C4%91%E1%BB%99)
 + [Trang web xử lý ảnh dùng cho xử lý các ảnh trong Game](http://www.online-image-editor.com/)
 + [Học tính đa hình trong lập trình hướng đối tượng với ngôn ngữ Java](https://github.com/trantrungnt/LearnDaHinh)
++ [Học Desing Parttern và ObServer](https://github.com/trantrungnt/LearnDesignParternObServer)
 
 ```
 Biên độ là một đại lượng vô hướng, không âm đặc trưng cho độ lớn của dao động.
